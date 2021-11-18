@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="change image name docker-compose-production.yml">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leocloud-demo-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leocloud-demo-app.iml" afterDir="false" />
+    <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="bounce pom.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +53,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20114942" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -140,7 +136,7 @@
       <workItem from="1637055155501" duration="1305000" />
       <workItem from="1637133237694" duration="75000" />
       <workItem from="1637234015482" duration="2284000" />
-      <workItem from="1637236511431" duration="355000" />
+      <workItem from="1637236511431" duration="686000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -177,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637234373336</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bounce pom.xml">
+      <created>1637237146627</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637237146627</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +205,7 @@
     <MESSAGE value="add requests.http" />
     <MESSAGE value="add import.sql" />
     <MESSAGE value="change image name docker-compose-production.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="change image name docker-compose-production.yml" />
+    <MESSAGE value="bounce pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="bounce pom.xml" />
   </component>
 </project>
