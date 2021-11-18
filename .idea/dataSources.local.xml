@@ -16,5 +16,9 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="oravm-mandel" uuid="5a0a3ee5-ff99-491f-a595-1d28dafbf00c">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <schema-mapping />
+    </data-source>
   </component>
 </project>
