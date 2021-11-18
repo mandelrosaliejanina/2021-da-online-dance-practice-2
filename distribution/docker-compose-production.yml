@@ -19,7 +19,7 @@ services:
       timeout: 5s
       retries: 5
   appsrv:
-    image: ghcr.io/mandelrosaliejanina/mealcounter-reload-appsrv:latest
+    image: ghcr.io/mandelrosaliejanina/2021-da-online-dance-practice-2-appsrv:latest
     deploy:
       restart_policy:
         condition: on-failure
@@ -31,7 +31,7 @@ services:
     depends_on:
       - db
   nginx:
-    image: ghcr.io/mandelrosaliejanina/mealcounter-reload-nginx:latest
+    image: ghcr.io/mandelrosaliejanina/2021-da-online-dance-practice-2-nginx:latest
     deploy:
       restart_policy:
         condition: on-failure
