@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="set back">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="switch back to shortend version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +137,8 @@
       <workItem from="1637133237694" duration="75000" />
       <workItem from="1637234015482" duration="2284000" />
       <workItem from="1637236511431" duration="1786000" />
-      <workItem from="1637238423626" duration="134000" />
+      <workItem from="1637238423626" duration="876000" />
+      <workItem from="1637239518434" duration="3980000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -189,7 +189,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637237332884</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="set to 11">
+      <created>1637238634114</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637238634114</updated>
+    </task>
+    <task id="LOCAL-00009" summary="split install ssh key">
+      <created>1637250236900</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1637250236900</updated>
+    </task>
+    <task id="LOCAL-00010" summary="switch back to shortend version">
+      <created>1637266289544</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1637266289544</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +237,9 @@
     <MESSAGE value="change image name docker-compose-production.yml" />
     <MESSAGE value="bounce pom.xml" />
     <MESSAGE value="set back" />
-    <option name="LAST_COMMIT_MESSAGE" value="set back" />
+    <MESSAGE value="set to 11" />
+    <MESSAGE value="split install ssh key" />
+    <MESSAGE value="switch back to shortend version" />
+    <option name="LAST_COMMIT_MESSAGE" value="switch back to shortend version" />
   </component>
 </project>
