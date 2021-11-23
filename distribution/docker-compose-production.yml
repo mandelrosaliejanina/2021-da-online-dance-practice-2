@@ -38,7 +38,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - /opt/media:/usr/share/nginx/html/media
+      - /opt/html:/usr/share/nginx/html
     depends_on:
       - appsrv
 volumes:
