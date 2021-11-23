@@ -11,7 +11,6 @@ services:
       - 5432:5432
     volumes:
       - database:/var/lib/postgresql/data
-      - ./db-postgres/import:/import
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
@@ -40,6 +39,8 @@ services:
         max_attempts: 3
     ports:
       - 4000:80
+    volumes:
+      - /opt/media:/usr/share/nginx/html/media
     depends_on:
       - appsrv
 volumes:
