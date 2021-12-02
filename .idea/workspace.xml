@@ -6,7 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="change volume">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/app.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/docker/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/docker/default.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/docker/fix-base-url.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/docker/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/images/forestbridge.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index_cloud.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/lib/html.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/model/model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/model/school/school.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/model/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/rest/school/school-service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/styles/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/view/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/view/school/school-dialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/view/school/school-table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/webpack.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +173,8 @@
       <workItem from="1637654503026" duration="1058000" />
       <workItem from="1637656276167" duration="3365000" />
       <workItem from="1637871757396" duration="7000" />
-      <workItem from="1638475506078" duration="351000" />
+      <workItem from="1638475506078" duration="679000" />
+      <workItem from="1638478006186" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -256,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637660444915</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="copy tar file to vm">
+      <created>1638476057427</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638476057427</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +328,7 @@
     <MESSAGE value="change volume path" />
     <MESSAGE value="remove dot" />
     <MESSAGE value="change volume" />
-    <option name="LAST_COMMIT_MESSAGE" value="change volume" />
+    <MESSAGE value="copy tar file to vm" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy tar file to vm" />
   </component>
 </project>
