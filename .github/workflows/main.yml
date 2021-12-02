@@ -55,11 +55,11 @@ jobs:
       - name: install node dependencies
         run: |
           npm install
-        working-directory: frontend
+        working-directory: www
 
       - name: build web application
         run: npm run build
-        working-directory: frontend
+        working-directory: www
 
       - name: build tar file
         run: tar -czf onlinedance.tgz untitled/
