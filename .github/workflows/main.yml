@@ -39,12 +39,12 @@ jobs:
             ${{ runner.os }}-build-m2-
 
       - name: install ssh key
-          uses: caberger/install-ssh-key@v1.0
-          with:
-            ssh-private-key: ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
-            user: ${{ secrets.SERVER_USER }}
-            server: ${{ secrets.SERVER }}
-            alias: server
+        uses: caberger/install-ssh-key@v1.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
+          user: ${{ secrets.SERVER_USER }}
+          server: ${{ secrets.SERVER }}
+          alias: server
 
       - name: cache node_modules (www)
         uses: actions/cache@v2
