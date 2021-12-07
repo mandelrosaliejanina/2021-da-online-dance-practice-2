@@ -81,9 +81,9 @@ jobs:
           scp onlinedance.tgz server:
         working-directory: www/dist
 
-      - name: copy tar to /opt/html
-        run: ssh ${{ secrets.SERVER }} "sudo tar -C /opt/html -xzf onlinedance.tgz"
-        working-directory: www/dist
+#      - name: copy tar to /opt/html
+#        run: ssh ${{ secrets.SERVER }} "sudo tar -C /opt/html -xzf onlinedance.tgz"
+#        working-directory: www/dist
 
       - name: deploy to distribution folder
         run: |

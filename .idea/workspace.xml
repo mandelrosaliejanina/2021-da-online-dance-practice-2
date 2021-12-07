@@ -164,7 +164,7 @@
       <workItem from="1638479012485" duration="801000" />
       <workItem from="1638516301275" duration="133000" />
       <workItem from="1638724146677" duration="2163000" />
-      <workItem from="1638864072146" duration="1508000" />
+      <workItem from="1638864072146" duration="1809000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -292,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638479625972</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="delete nginx from docker-compose.yml">
+      <created>1638866554980</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1638866554980</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix spaces">
+      <created>1638866729159</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1638866729159</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,6 +348,7 @@
     <MESSAGE value="copy tar file to vm" />
     <MESSAGE value="change working dir" />
     <MESSAGE value="delete nginx from docker-compose.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete nginx from docker-compose.yml" />
+    <MESSAGE value="fix spaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix spaces" />
   </component>
 </project>
