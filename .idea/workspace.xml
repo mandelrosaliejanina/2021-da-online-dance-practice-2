@@ -164,7 +164,7 @@
       <workItem from="1638479012485" duration="801000" />
       <workItem from="1638516301275" duration="133000" />
       <workItem from="1638724146677" duration="2163000" />
-      <workItem from="1638864072146" duration="1939000" />
+      <workItem from="1638864072146" duration="2499000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -313,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638868344292</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="fix copy tar to /var/www/html">
+      <created>1638868483514</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1638868483514</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +364,7 @@
     <MESSAGE value="delete nginx from docker-compose.yml" />
     <MESSAGE value="fix spaces" />
     <MESSAGE value="comment copy tar" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment copy tar" />
+    <MESSAGE value="fix copy tar to /var/www/html" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix copy tar to /var/www/html" />
   </component>
 </project>

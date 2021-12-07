@@ -84,6 +84,9 @@ jobs:
       - name: copy tar to /var/www/html
         run: ssh server "sudo tar -C /var/www/html -xzf onlinedance.tgz"
 
+      - name: move contents to /var/www/html
+        run:  sudo mv untitled/* .
+
 
       - name: deploy to distribution folder
         run: |
