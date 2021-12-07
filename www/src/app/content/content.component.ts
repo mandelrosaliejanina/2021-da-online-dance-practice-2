@@ -1,14 +1,13 @@
-import {Component, Input} from '@angular/core';
-import {ContentService, DFile} from './content.service';
-import {HttpClient, HttpEventType} from '@angular/common/http';
-import {publish} from 'rxjs/operators';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ContentService, DFile} from '../content.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-content',
+  templateUrl: './content.component.html',
+  styleUrls: ['./content.component.css']
 })
-export class AppComponent{
+export class ContentComponent implements OnInit {
   title = 'frontend';
   videoSource = '';
   audioSource = '';
@@ -16,8 +15,12 @@ export class AppComponent{
   files: DFile[];
   fileName = '';
   cards: ImyCard[];
-  value01: string | null = null;
-  value02: string | null = null;
+  value: string | null = null;
+  @Input() contentSelected!: string | null;
+  @Input() contentSelected02!: string | null;
+  @Output() contSelected: EventEmitter<string> = new EventEmitter<string>();
+  gridColumns = 4;
+
 
   constructor(private http: HttpClient, public contentService: ContentService) {
     this.files = [];
@@ -36,6 +39,11 @@ export class AppComponent{
       text: 'cde'
     }];
   }
+
+  toggleGridColumns(): any {
+    this.gridColumns = this.gridColumns === 4 ? 5 : 4;
+  }
+
   onFileSelected(event: any): void {
 
     const file: File = event.target.files[0];
@@ -49,13 +57,16 @@ export class AppComponent{
     }
   }
 
-  levelSelected($event: string): void  {
-    this.value01 = $event;
+  // tslint:disable-next-line:typedef
+  content(s: string) {
+    // @ts-ignore
+    document.getElementById('lname').value = s;
+    this.contSelected.emit(s);
   }
 
-  courseS($event: string): void  {
-    this.value02 = $event;
+  ngOnInit(): void {
   }
+
 }
 
 export interface ImyCard{

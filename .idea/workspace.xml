@@ -69,11 +69,13 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20114942" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/www2/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/www" />
+      <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/appsrv" />
@@ -164,7 +166,7 @@
       <workItem from="1638479012485" duration="801000" />
       <workItem from="1638516301275" duration="133000" />
       <workItem from="1638724146677" duration="2163000" />
-      <workItem from="1638864072146" duration="2499000" />
+      <workItem from="1638864072146" duration="4591000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -320,7 +322,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638868483514</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="move contents">
+      <created>1638869276983</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1638869276983</updated>
+    </task>
+    <task id="LOCAL-00024" summary="move contents">
+      <created>1638869483256</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1638869483256</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,6 +381,7 @@
     <MESSAGE value="fix spaces" />
     <MESSAGE value="comment copy tar" />
     <MESSAGE value="fix copy tar to /var/www/html" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix copy tar to /var/www/html" />
+    <MESSAGE value="move contents" />
+    <option name="LAST_COMMIT_MESSAGE" value="move contents" />
   </component>
 </project>
