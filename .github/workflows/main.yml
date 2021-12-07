@@ -72,7 +72,7 @@ jobs:
 
       - name: build tar file
         run: | 
-          tar -czf onlinedance.tgz untitled/
+          tar -czf onlinedance.tgz frontend/
           ls -l .
         working-directory: www/dist
 
