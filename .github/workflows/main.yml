@@ -38,6 +38,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-m2-
 
+      - name: install ssh key
+          uses: caberger/install-ssh-key@v1.0
+          with:
+            ssh-private-key: ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
+            user: ${{ secrets.SERVER_USER }}
+            server: ${{ secrets.SERVER }}
+            alias: server
+
       - name: cache node_modules (www)
         uses: actions/cache@v2
         with:
@@ -61,17 +69,21 @@ jobs:
         run: npm run build
         working-directory: www
 
+
       - name: build tar file
-        run: tar -czf onlinedance.tgz untitled/
-        working-directory: dist
+        run: | 
+          tar -czf onlinedance.tgz untitled/
+          ls -l .
+        working-directory: www/dist
 
       - name: copy tar to vm
-        run: scp onlinedance.tgz ${{ secrets.SERVER }}
-        working-directory: dist
+        run: |
+          scp onlinedance.tgz server:
+        working-directory: www/dist
 
       - name: copy tar to /opt/html
         run: ssh ${{ secrets.SERVER }} "sudo tar -C /opt/html -xzf onlinedance.tgz"
-        working-directory: dist
+        working-directory: www/dist
 
       - name: deploy to distribution folder
         run: |
@@ -107,13 +119,6 @@ jobs:
           docker push ${{ env.REGISTRY }}/${{ github.repository }}-nginx
         working-directory: distribution/${{ env.DISTRIBUTION_FOLDER }}
 
-      - name: install ssh key
-        uses: caberger/install-ssh-key@v1.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
-          user: ${{ secrets.SERVER_USER }}
-          server: ${{ secrets.SERVER }}
-          alias: server
 
       - name: convert github repository name to lowercase
         run: echo "IMAGE_REPOSITORY=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV

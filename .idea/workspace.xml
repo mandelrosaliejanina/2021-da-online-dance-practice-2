@@ -5,32 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="change volume">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0adfdb2f-aa2f-44c3-8ad6-4008c7f2ec1d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/docker/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/docker/default.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/docker/fix-base-url.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/docker/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/images/forestbridge.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index_cloud.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/lib/html.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/model/model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/model/school/school.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/model/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/rest/school/school-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/styles/styles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/view/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/view/school/school-dialog.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/view/school/school-table.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/distribution/distribution.iml" beforeDir="false" afterPath="$PROJECT_DIR$/distribution/distribution.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leocloud-demo-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leocloud-demo-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +44,9 @@
         <entry key="JPA Structure" value="false" />
       </map>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="20UjxEq7VH7dyQ5G9LOzgCrqvIa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -175,6 +161,10 @@
       <workItem from="1637871757396" duration="7000" />
       <workItem from="1638475506078" duration="679000" />
       <workItem from="1638478006186" duration="654000" />
+      <workItem from="1638479012485" duration="801000" />
+      <workItem from="1638516301275" duration="133000" />
+      <workItem from="1638724146677" duration="2163000" />
+      <workItem from="1638864072146" duration="1080000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -288,7 +278,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638476057427</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="copy tar file to vm">
+      <created>1638479038624</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638479038624</updated>
+    </task>
+    <task id="LOCAL-00018" summary="change working dir">
+      <created>1638479625972</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638479625972</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +313,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="push project" />
@@ -329,6 +332,7 @@
     <MESSAGE value="remove dot" />
     <MESSAGE value="change volume" />
     <MESSAGE value="copy tar file to vm" />
-    <option name="LAST_COMMIT_MESSAGE" value="copy tar file to vm" />
+    <MESSAGE value="change working dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="change working dir" />
   </component>
 </project>
