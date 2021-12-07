@@ -81,6 +81,9 @@ jobs:
           scp onlinedance.tgz server:
         working-directory: www/dist
 
+      - name: remove old contents
+        run: ssh server "sudo rm -r /var/www/html/*"
+
       - name: copy tar to /var/www/html
         run: ssh server "sudo tar -C /var/www/html -xzf onlinedance.tgz"
 
