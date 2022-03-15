@@ -67,18 +67,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/distribution" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20114942" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/www2/node_modules/typescript/lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/www/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/distribution" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/distribution" />
       <recent name="$PROJECT_DIR$/appsrv" />
       <recent name="$PROJECT_DIR$/appsrv/src/main" />
       <recent name="$PROJECT_DIR$/www" />
@@ -181,7 +181,7 @@
       <workItem from="1642264909650" duration="270000" />
       <workItem from="1642415896328" duration="52000" />
       <workItem from="1642427920779" duration="2000" />
-      <workItem from="1647331408830" duration="1335000" />
+      <workItem from="1647331408830" duration="4581000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -379,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638876137312</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="copy files">
+      <created>1647334160464</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1647334160464</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +409,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change image name" />
     <MESSAGE value="push insert statements" />
     <MESSAGE value="add requests.http" />
     <MESSAGE value="add import.sql" />
@@ -427,6 +433,7 @@
     <MESSAGE value="update frontend" />
     <MESSAGE value="change name to frontend" />
     <MESSAGE value="remove old contents" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove old contents" />
+    <MESSAGE value="copy files" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy files" />
   </component>
 </project>

@@ -1,0 +1,33 @@
+<div *ngIf="courses" class="courses-wrapper">
+  <div class="course">
+    <p class="title">Titel</p>
+    <p class="description">Beschreibung</p>
+    <p class="level">Level</p>
+    <p class="button-wrapper"></p>
+  </div>
+
+  <div *ngFor="let course of courses" class="course">
+    <p class="title">{{ course.title }}</p>
+    <p class="description">{{ course.description }}</p>
+    <p class="level">{{course.level.description}}</p>
+
+    <!--Delete Button-->
+    <div class="button-wrapper">
+      <button mat-icon-button>
+        <mat-icon (click)="delete(course)">delete</mat-icon>
+      </button>
+
+
+      <!--Edit Button-->
+      <button mat-icon-button>
+        <mat-icon (click)="edit(course)">edit</mat-icon>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!--Create Button-->
+<button (click)="create()" id="create-button" mat-raised-button>Neuen Kurs erstellen</button>
+
+

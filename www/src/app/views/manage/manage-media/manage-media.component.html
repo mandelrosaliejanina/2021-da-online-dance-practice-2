@@ -1,0 +1,19 @@
+<button (click)="create()" id="create-button" mat-raised-button>Medien Hochladen</button>
+
+<div *ngIf="contents" class="contents-wrapper">
+  <div class="contents">
+    <p class="name">Name</p>
+  </div>
+
+  <div *ngFor="let content of contents" class="contents">
+    <p class="content">{{ content.name }}</p>
+
+    <div class="button-wrapper">
+      <button mat-icon-button>
+        <mat-icon (click)="delete(content)">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+

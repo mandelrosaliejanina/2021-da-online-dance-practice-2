@@ -1,0 +1,5 @@
+<h2 *ngIf="selectedCourse">{{selectedCourse}}</h2>
+<div class="content-body">
+  <app-access-video *ngFor="let file of getVideoFiles(files)" [file]="file"></app-access-video>
+  <app-access-audio *ngFor="let file of getAudioFiles(files)" [file]="file"></app-access-audio>
+</div>

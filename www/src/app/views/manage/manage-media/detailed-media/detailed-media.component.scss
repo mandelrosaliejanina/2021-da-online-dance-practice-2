@@ -1,0 +1,36 @@
+mat-form-field{
+  margin-right: 5%;
+}
+
+#selectFile{
+  background-color: white;
+  color:green;
+}
+
+#form{
+  margin-bottom: 30px;
+}
+
+#textContainer{
+  margin-bottom:30px;
+}
+
+#formContainer{
+  margin-top: 15px;
+}
+
+input[type=file]::file-selector-button {
+  background-color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  padding: 8px 13px;
+  border-radius: 5px ;
+  font-size: 14px;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #f8f8f8;
+}

@@ -1,64 +1,82 @@
-import {Component, Input} from '@angular/core';
-import {ContentService, DFile} from './content.service';
-import {HttpClient, HttpEventType} from '@angular/common/http';
-import {publish} from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "./services/auth.service";
+import {ActivatedRoute, NavigationEnd, Router, UrlTree} from "@angular/router";
+import {Observable} from "rxjs";
+import {AccessTokenResponse, User, UserCredential} from "./models/models";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent{
-  title = 'frontend';
-  videoSource = '';
-  audioSource = '';
-  audio: any;
-  files: DFile[];
-  fileName = '';
-  cards: ImyCard[];
-  value01: string | null = null;
-  value02: string | null = null;
+export class AppComponent implements OnInit {
+  title = 'www';
+  isLoggedInState: Observable<boolean>;
+  user: User | null;
+  currentTab: string;
+  token: Observable<AccessTokenResponse | null>;
 
-  constructor(private http: HttpClient, public contentService: ContentService) {
-    this.files = [];
-
-    contentService.getPath(32).subscribe(path => {
-      console.log(path);
-      this.videoSource = path;
-    });
-
-    contentService.getFiles().subscribe(files => {
-      this.files = files;
-    });
-
-    this.cards = [{
-      title: 'abc',
-      text: 'cde'
-    }];
+  constructor(private readonly auth: AuthService,
+              private readonly router: Router,
+              private readonly route: ActivatedRoute) {
+    this.isLoggedInState = this.auth.loggedInStateAsObservable;
+    this.user = null;
+    this.currentTab = "";
+    this.token = this.auth.getToken();
   }
-  onFileSelected(event: any): void {
 
-    const file: File = event.target.files[0];
-
-    if (file) {
-      this.fileName = file.name;
-      const formData = new FormData();
-      formData.append('thumbnail', file);
-      const upload$ = this.http.post('http://localhost:8080/api/file/upload', formData);
-      upload$.subscribe();
+  ngOnInit(): void {
+    const credentials: UserCredential = JSON.parse(sessionStorage.getItem('user') || 'null') as UserCredential;
+    if (credentials) {
+      this.auth.authenticate(credentials.username, credentials.password).then(value => {
+        this.auth.loggedInState = true;
+        this.auth.setUser(value as User);
+      })
     }
+    this.auth.loggedInStateAsObservable.subscribe(state => {
+      let redirectUrl: string | UrlTree = '/home';
+
+
+      if (state) {
+        this.route.queryParams.subscribe(value => {
+          if (value["redirectUrl"]) {
+            redirectUrl = value["redirectUrl"];
+          }
+        });
+      } else {
+        this.route.queryParams.subscribe(value => {
+          if (value["redirectUrl"]) {
+            redirectUrl = this.router.createUrlTree(
+              ['/signin'], {
+                queryParams: {
+                  redirectUrl: value["redirectUrl"]
+                }
+              }
+            );
+          } else {
+            redirectUrl = '/signin';
+          }
+        });
+      }
+
+      this.router.navigateByUrl(redirectUrl, {replaceUrl: true})
+        .catch(err => {
+          console.error(err);
+        });
+    });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentTab = event.url;
+      }
+    })
+
+    this.auth.userObservable.subscribe(user => {
+      this.user = user
+    })
   }
 
-  levelSelected($event: string): void  {
-    this.value01 = $event;
+  logout() {
+    this.auth.signOut();
   }
-
-  courseS($event: string): void  {
-    this.value02 = $event;
-  }
-}
-
-export interface ImyCard{
-  title: string;
-  text: string;
 }

@@ -1,0 +1,31 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+app-access-audio, app-access-video {
+  width: 40%;
+  display: block;
+  max-height: 60vh;
+  margin: 1% 1.5%;
+  word-break: break-word;
+  overflow: hidden scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.content-body {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h2 {
+
+}

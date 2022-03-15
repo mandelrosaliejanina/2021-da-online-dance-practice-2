@@ -1,0 +1,65 @@
+.accessTokens-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  .accessToken {
+    width: 100%;
+    padding: 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    &:nth-child(1) {
+      p {
+        font-weight: bold;
+        font-size: larger
+      }
+    }
+
+    &:nth-child(2n) {
+      background: rgba(3, 143, 128, 0.30);
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .token {
+      width: 10%;
+    }
+
+    .course {
+      width: 30%;
+    }
+
+    .activationDate {
+      width: 17.5%;
+    }
+
+    .expireDate {
+      width: 17.5%;
+    }
+
+    .daysValid {
+      width: 10%;
+    }
+
+    .button-wrapper {
+      width: 15%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+#create-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh 0 0 1vw;
+}

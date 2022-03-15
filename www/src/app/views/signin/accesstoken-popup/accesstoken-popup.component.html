@@ -1,0 +1,19 @@
+<form>
+  <mat-form-field>
+    <mat-label>Zugangscode</mat-label>
+    <input [formControl]="accesstokenControl" matInput name="accesstoken" placeholder="Zugangscode">
+
+    <mat-error *ngIf="accesstokenControl.hasError('required')">Zugangscode ist erforderlich</mat-error>
+  </mat-form-field>
+
+  <mat-error *ngIf="responseMessage">{{  responseMessage }}</mat-error>
+
+  <div class="button-wrapper">
+    <button (click)="signIn()"
+            [disabled]="accesstokenControl.hasError('required')"
+            color="primary"
+            mat-raised-button
+            type="button">Anmelden
+    </button>
+  </div>
+</form>

@@ -1,0 +1,36 @@
+<div *ngIf="accessTokens" class="accessTokens-wrapper">
+  <div class="accessToken">
+    <p class="token">Token</p>
+    <p class="course">Kurs</p>
+    <p class="activationDate">Datum gültig ab</p>
+    <p class="expireDate">Datum gültig bis</p>
+    <p class="daysValid">Tage gültig</p>
+    <p class="button-wrapper"></p>
+  </div>
+
+  <div *ngFor="let accessToken of accessTokens" class="accessToken">
+    <p class="token">{{ accessToken.token }}</p>
+    <p class="course">{{ accessToken.course.title }}</p>
+    <p class="activationDate">{{ (accessToken.activationDate | date: 'dd.MM.YYYY') || '-'}}</p>
+    <p class="expireDate">{{ (accessToken.expireDate | date: 'dd.MM.YYYY') || '-'}}</p>
+    <p class="daysValid">{{ accessToken.daysValid || '-'}}</p>
+
+    <div class="button-wrapper">
+      <button mat-icon-button>
+        <mat-icon (click)="delete(accessToken)">delete</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon (click)="edit(accessToken)">edit</mat-icon>
+      </button>
+
+      <button #tooltip="matTooltip" (mouseenter)="$event.stopImmediatePropagation()"
+              (mouseleave)="$event.stopImmediatePropagation()" mat-icon-button
+              matTooltip="Token {{ accessToken.token }} wurde in die Zwischenablage kopiert">
+        <mat-icon (click)="copyToken(accessToken.token,tooltip)">content_copy</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<button (click)="create()" id="create-button" mat-raised-button>AccessToken erstellen</button>

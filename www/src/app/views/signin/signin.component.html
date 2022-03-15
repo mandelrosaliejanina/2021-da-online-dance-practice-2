@@ -1,0 +1,36 @@
+<h1 id="banner">Online-Dance-Practice</h1>
+
+<form>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="Username" name="username" [formControl]="usernameControl">
+
+    <mat-error *ngIf="usernameControl.hasError('required')">Username ist erforderlich</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Passwort</mat-label>
+    <input matInput placeholder="Passwort" name="password" type="password" [formControl]="passwordControl">
+
+    <mat-error *ngIf="passwordControl.hasError('required')">Passwort ist erforderlich</mat-error>
+  </mat-form-field>
+
+  <mat-error *ngIf="responseMessage">{{  responseMessage }}</mat-error>
+
+  <div class="button-wrapper">
+    <button mat-raised-button
+            color="primary"
+            type="button"
+            (click)="signIn()"
+            [disabled]="usernameControl.hasError('required')
+            || passwordControl.hasError('required')">Anmelden
+    </button>
+  </div>
+  <div class="button-wrapper" id="accestokenContainer">
+    <button (click)="signInWithAccessToken()"
+            color="primary"
+            mat-raised-button
+            type="button">Anmelden mit Zugangscode
+    </button>
+  </div>
+</form>

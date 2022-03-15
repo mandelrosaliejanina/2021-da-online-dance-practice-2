@@ -1,0 +1,17 @@
+<div class="content-head-container">
+  <h1>Kurs</h1>
+</div>
+
+<div class="content-body">
+  <div *ngIf="levels">
+    <span (click)="selectLevel(level)" *ngFor="let level of levels"
+          [class.selected]="selectedLevel?.id === level.id">{{level.description}}</span>
+  </div>
+
+  <div *ngIf="courses">
+    <span (click)="selectCourse(course)" *ngFor="let course of getCoursesByLevel(selectedLevel)"
+          [class.selected]="selectedCourse?.id === course.id">{{course.title}}</span>
+  </div>
+
+  <app-media-content *ngIf="selectedCourse" [course]="selectedCourse"></app-media-content>
+</div>

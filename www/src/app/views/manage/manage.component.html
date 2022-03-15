@@ -1,0 +1,20 @@
+<div class="flexContainer">
+  <div class="content-head-container">
+    <h1>Verwaltungen</h1>
+  </div>
+<!--Menu-->
+<div id="menucontainer">
+  <button [matMenuTriggerFor]="aboveMenu" mat-button routerLink="/manage/manage-course">
+    Kurse<mat-icon>group</mat-icon></button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="belowMenu" mat-button routerLink="/manage/manage-accesstoken">Zugangscode<mat-icon>radio_button_checked</mat-icon></button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+  </mat-menu>
+
+  <button [matMenuTriggerFor]="beforeMenu" mat-button routerLink="/manage/manage-media">Medien <mat-icon>folder</mat-icon></button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+  </mat-menu>
+</div>
+</div>

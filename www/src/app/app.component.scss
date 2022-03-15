@@ -1,0 +1,35 @@
+button {
+  font-style: normal;
+
+  font-size: 25px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  letter-spacing: 2px;
+  padding: 0.5%;
+}
+
+.menucontainer {
+  display: flex;
+  align-content: space-between;
+  margin-bottom: 4%;
+  color: #038f80;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10em;
+  border-bottom: 1px solid #D0D0D0;
+}
+
+.menucontainer > * {
+  flex: 1;
+}
+
+button:hover, .selected {
+  background-color: #F8F8F8;
+  transition: all .25s ease-in-out;
+  border-radius: 15px;
+  color: #038f80;
+}
+
+
+
