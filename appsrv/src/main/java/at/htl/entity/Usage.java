@@ -7,6 +7,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "D_USAGE")
+@NamedQueries({
+        @NamedQuery(
+                name = "Usage.findByCourseId",
+                query = "select u.file from Usage u where u.course.id = :ID"
+        )
+})
 public class Usage extends PanacheEntityBase {
 
     @Id
@@ -15,11 +21,11 @@ public class Usage extends PanacheEntityBase {
     public Long id;
 
     @JoinColumn(name = "UG_COURSE")
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     public Course course;
 
     @JoinColumn(name = "UG_FILE")
-    @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     public D_File file;
 
 

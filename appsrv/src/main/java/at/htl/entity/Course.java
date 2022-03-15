@@ -20,7 +20,7 @@ public class Course extends PanacheEntityBase {
     public String description;
 
     @ManyToOne
-    @JoinColumn(name ="C_LEVEL")
+    @JoinColumn(name = "C_LEVEL")
     public Level level;
 
 

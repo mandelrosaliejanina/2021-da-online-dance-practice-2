@@ -1,0 +1,262 @@
+GET http://localhost:8080/api/file/findall
+Accept: application/json
+
+###
+
+
+GET http://localhost:8080/api/file/32
+Accept: application/json
+
+
+####
+POST localhost:8080/api/file/uploadfile
+Content-Type: application/json
+
+{
+  "name": "File123",
+  "path": "example/path/123",
+  "contentType": "VIDEO"
+}
+
+
+######
+
+DELETE http://localhost:8080/api/file/3
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/level
+Accept: application/json
+
+
+#####
+POST http://localhost:8080/api/level/create
+Content-Type: application/json
+
+{
+  "id": "AH",
+  "description": "bahahaha"
+}
+
+
+###
+
+GET http://localhost:8080/api/level/AH
+Accept: application/json
+
+####
+
+
+DELETE http://localhost:8080/api/level/AH
+Accept: application/json
+
+
+####
+
+GET http://localhost:8080/api/usage
+Accept: application/json
+
+####
+
+
+GET http://localhost:8080/api/usage/6
+Accept: application/json
+
+####
+
+POST http://localhost:8080/api/usage/create/1/29
+Content-Type: application/json
+
+
+####
+
+DELETE http://localhost:8080/api/usage/6
+Accept: application/json
+
+####
+
+
+GET http://localhost:8080/api/user
+Accept: application/json
+
+####
+
+POST http://localhost:8080/api/user/create
+Content-Type: application/json
+
+{
+  "username": "Rosi12",
+  "firstname": "Rosalie",
+  "lastname": "Mandel",
+  "password": "1234",
+  "role": "TEACHER"
+}
+
+
+####
+GET http://localhost:8080/api/user/7
+Accept: application/json
+
+#####
+
+
+
+DELETE http://localhost:8080/api/user/7
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/user/authenticate
+Content-Type: application/json
+
+{
+  "username": "Rosi12"
+}
+
+
+#####
+GET http://localhost:8080/api/course
+Accept: application/json
+
+####
+
+#####
+GET http://localhost:8080/api/course/filesByCourse/1
+Accept: application/json
+
+####
+GET http://localhost:8080/api/course/findByLevel/GRUNDKURS
+Accept: application/json
+
+####
+
+POST http://localhost:8080/api/course/create
+Content-Type: application/json
+
+{
+
+"title": "Grundschritte & Figuren",
+"description": "Für alle Gelengheiten",
+  "level": {
+    "id": "1"
+  }
+}
+
+
+####
+GET http://localhost:8080/api/course/1
+Accept: application/json
+
+#####
+
+DELETE http://localhost:8080/api/course/1
+Accept: application/json
+
+#####
+
+GET http://localhost:8080/api/booking
+Accept: application/json
+
+#####
+
+
+POST http://localhost:8080/api/booking/create/1/29
+Content-Type: application/json
+
+
+####
+
+POST http://localhost:8080/api/booking/create
+Content-Type: application/json
+
+{
+"user":{
+  "username": "Rosi12",
+  "firstname": "Rosalie",
+  "lastname": "Mandel"
+}
+,
+  "course":{
+"title": "Rosalie",
+  "description": "Mandel",
+  "level": {
+    "id": "1",
+    "description": "einfach"
+  }
+}
+}
+#####
+
+GET http://localhost:8080/api/booking/2
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/booking/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/dummy
+
+###
+
+POST  http://localhost:8080/api/accessToken
+Authorization: Basic RosalieMandel14:$2a$10$iESvXX2nMlj.6fOyj0Zs0eDeX4MQAxd9LpXPikp3OXx8yYfz9qit.
+Content-Type: application/json
+
+{
+  "course": {
+    "id": 2,
+    "title": "Rosalie",
+    "description": "Mandel",
+    "level": {
+      "id": "1",
+      "description": "einfach"
+    }
+  }
+}
+
+####
+
+POST  http://localhost:8080/api/accessToken/validate
+Content-Type: application/json
+
+{
+  "token": "nVhMT"
+}
+
+
+####
+
+GET http://localhost:8080/api/accessToken
+Content-Type: application/json
+
+####
+
+PUT http://localhost:8080/api/accessToken
+Content-Type: application/json
+
+{
+  "token": "jArmy",
+  "daysValid": 15,
+  "course": {
+    "id": 2,
+    "title": "Rosalie",
+    "description": "Mandel",
+    "level": {
+      "id": "1",
+      "description": "einfach"
+    }
+  }
+}
+
+
+####
+
+DELETE http://localhost:8080/api/accessToken/GWZgA
+
+###
+
+

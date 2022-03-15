@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa7d0dba-f6db-4c2a-be8b-6e0aaf960499" name="Changes" comment="change volume">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0adfdb2f-aa2f-44c3-8ad6-4008c7f2ec1d.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a0a3ee5-ff99-491f-a595-1d28dafbf00c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/distribution/distribution.iml" beforeDir="false" afterPath="$PROJECT_DIR$/distribution/distribution.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leocloud-demo-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leocloud-demo-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +30,9 @@
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
@@ -42,11 +40,17 @@
         <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="20UjxEq7VH7dyQ5G9LOzgCrqvIa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -63,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/distribution" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -73,9 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/distribution" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/appsrv" />
+      <recent name="$PROJECT_DIR$/appsrv/src/main" />
       <recent name="$PROJECT_DIR$/www" />
-      <recent name="$PROJECT_DIR$/frontend" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/appsrv" />
@@ -167,6 +173,15 @@
       <workItem from="1638516301275" duration="133000" />
       <workItem from="1638724146677" duration="2163000" />
       <workItem from="1638864072146" duration="4591000" />
+      <workItem from="1638872808701" duration="1821000" />
+      <workItem from="1639122593145" duration="260000" />
+      <workItem from="1640078916858" duration="512000" />
+      <workItem from="1641890098736" duration="127000" />
+      <workItem from="1641890466506" duration="1056000" />
+      <workItem from="1642264909650" duration="270000" />
+      <workItem from="1642415896328" duration="52000" />
+      <workItem from="1642427920779" duration="2000" />
+      <workItem from="1647331408830" duration="1335000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -336,7 +351,35 @@
       <option name="project" value="LOCAL" />
       <updated>1638869483256</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update frontend">
+      <created>1638873093731</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1638873093731</updated>
+    </task>
+    <task id="LOCAL-00026" summary="change name to frontend">
+      <created>1638873742569</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1638873742569</updated>
+    </task>
+    <task id="LOCAL-00027" summary="change name to frontend">
+      <created>1638873930557</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1638873930557</updated>
+    </task>
+    <task id="LOCAL-00028" summary="remove old contents">
+      <created>1638876137312</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1638876137312</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="push project" />
     <MESSAGE value="change image name" />
     <MESSAGE value="push insert statements" />
     <MESSAGE value="add requests.http" />
@@ -382,6 +424,9 @@
     <MESSAGE value="comment copy tar" />
     <MESSAGE value="fix copy tar to /var/www/html" />
     <MESSAGE value="move contents" />
-    <option name="LAST_COMMIT_MESSAGE" value="move contents" />
+    <MESSAGE value="update frontend" />
+    <MESSAGE value="change name to frontend" />
+    <MESSAGE value="remove old contents" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove old contents" />
   </component>
 </project>

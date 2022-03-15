@@ -38,14 +38,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-m2-
 
-      - name: install ssh key
-        uses: caberger/install-ssh-key@v1.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
-          user: ${{ secrets.SERVER_USER }}
-          server: ${{ secrets.SERVER }}
-          alias: server
-
       - name: cache node_modules (www)
         uses: actions/cache@v2
         with:
@@ -66,29 +58,8 @@ jobs:
         working-directory: www
 
       - name: build web application
-        run: npm run build
+        run: npm run build --base="/" --configuration
         working-directory: www
-
-
-      - name: build tar file
-        run: | 
-          tar -czf onlinedance.tgz frontend/
-          ls -l .
-        working-directory: www/dist
-
-      - name: copy tar to vm
-        run: |
-          scp onlinedance.tgz server:
-        working-directory: www/dist
-
-      - name: remove old contents
-        run: ssh server "sudo rm -r /var/www/html/*"
-
-      - name: copy tar to /var/www/html
-        run: ssh server "sudo tar -C /var/www/html -xzf onlinedance.tgz"
-
-      - name: move contents to /var/www/html
-        run:  ssh server "sudo mv /var/www/html/frontend/* /var/www/html/"
 
       - name: deploy to distribution folder
         run: |
@@ -124,6 +95,13 @@ jobs:
           docker push ${{ env.REGISTRY }}/${{ github.repository }}-nginx
         working-directory: distribution/${{ env.DISTRIBUTION_FOLDER }}
 
+      - name: install ssh key
+        uses: caberger/install-ssh-key@v1.0
+        with:
+          ssh-private-key:  ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
+          user: ${{ secrets.SERVER_USER }}
+          server: ${{ secrets.SERVER }}
+          alias: server
 
       - name: convert github repository name to lowercase
         run: echo "IMAGE_REPOSITORY=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
