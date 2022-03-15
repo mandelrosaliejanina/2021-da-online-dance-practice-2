@@ -76,13 +76,14 @@ jobs:
 
       - name: copy jar files
         run: |
-          cp appsrv/target/*.jar distribution/${{ env.DISTRIBUTION_FOLDER }}
+          cp appsrv/target/*.jar distribution/${{ env.DISTRIBUTION_FOLDER }}/appsrv
           ls -l distribution/${{ env.DISTRIBUTION_FOLDER }}
 
       - name: build appsrv docker image
         run: |
           pwd
           ls -l
+          ls -l appsrv
           docker build --file appsrv/Dockerfile.jvm appsrv --tag ${{ env.REGISTRY }}/${{ github.repository }}-appsrv
         working-directory: distribution/${{ env.DISTRIBUTION_FOLDER }}
 
