@@ -74,6 +74,10 @@ jobs:
           docker build nginx --tag ${{ env.REGISTRY }}/${{ github.repository }}-nginx
         working-directory: distribution/${{ env.DISTRIBUTION_FOLDER }}
 
+      - name: copy jar files
+          run: |
+            cp apprsv/target/*.jar distribution/${{ env.DISTRIBUTION_FOLDER }}
+
       - name: build appsrv docker image
         run: |
           docker build --file appsrv/Dockerfile.jvm appsrv --tag ${{ env.REGISTRY }}/${{ github.repository }}-appsrv
@@ -98,7 +102,7 @@ jobs:
       - name: install ssh key
         uses: caberger/install-ssh-key@v1.0
         with:
-          ssh-private-key:  ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
+          ssh-private-key: ${{ secrets.SSH_SERVER_PRIVATE_KEY }}
           user: ${{ secrets.SERVER_USER }}
           server: ${{ secrets.SERVER }}
           alias: server

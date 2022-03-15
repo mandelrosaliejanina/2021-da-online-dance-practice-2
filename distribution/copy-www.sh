@@ -11,7 +11,7 @@ echo "copy www files to $DIST"
 pushd $BASE_DIR
 mkdir -p $DIST/html/
 cp -r ./www/docker/* $DIST
-cp -r ./www/target/* $DIST/html/
+cp -r ./www/dist/* $DIST/html/
 ls -ld $DIST
 ls -ld $DIST/html
 popd
