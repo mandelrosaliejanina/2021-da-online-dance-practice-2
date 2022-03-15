@@ -2,7 +2,7 @@ FROM adoptopenjdk:jdk
 
 RUN apt update && apt install -y netcat && apt clean
 RUN mkdir /usr/local/bin/application
-COPY online-dance-practice-backend-1.0-SNAPSHOT-runner.jar /usr/local/bin/application/
+COPY ./*.jar /usr/local/bin/application/
 COPY scripts/* /usr/local/bin/application/
 RUN sed -e 's/\r$//' -i /usr/local/bin/application/*.sh && chmod +x /usr/local/bin/application/*.sh
 
