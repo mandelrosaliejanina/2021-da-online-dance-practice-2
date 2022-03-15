@@ -81,6 +81,7 @@ jobs:
 
       - name: build appsrv docker image
         run: |
+          ls -l
           docker build --file appsrv/Dockerfile.jvm appsrv --tag ${{ env.REGISTRY }}/${{ github.repository }}-appsrv
         working-directory: distribution/${{ env.DISTRIBUTION_FOLDER }}
 
