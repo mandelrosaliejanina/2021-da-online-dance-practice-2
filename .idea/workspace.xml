@@ -67,7 +67,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/www" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
@@ -77,11 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/distribution" />
       <recent name="$PROJECT_DIR$/appsrv" />
       <recent name="$PROJECT_DIR$/appsrv/src/main" />
-      <recent name="$PROJECT_DIR$/www" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/appsrv" />
@@ -182,6 +182,7 @@
       <workItem from="1642415896328" duration="52000" />
       <workItem from="1642427920779" duration="2000" />
       <workItem from="1647331408830" duration="4581000" />
+      <workItem from="1647338545246" duration="4602000" />
     </task>
     <task id="LOCAL-00001" summary="push project">
       <created>1636660053330</created>
@@ -386,7 +387,35 @@
       <option name="project" value="LOCAL" />
       <updated>1647334160464</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="frontend">
+      <created>1647338798205</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1647338798205</updated>
+    </task>
+    <task id="LOCAL-00031" summary="change target release">
+      <created>1647339236783</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1647339236783</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add doku">
+      <created>1647339587580</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1647339587580</updated>
+    </task>
+    <task id="LOCAL-00033" summary="copy www">
+      <created>1647340985792</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1647340985793</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,10 +438,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="push insert statements" />
-    <MESSAGE value="add requests.http" />
-    <MESSAGE value="add import.sql" />
-    <MESSAGE value="change image name docker-compose-production.yml" />
     <MESSAGE value="bounce pom.xml" />
     <MESSAGE value="set back" />
     <MESSAGE value="set to 11" />
@@ -434,6 +459,10 @@
     <MESSAGE value="change name to frontend" />
     <MESSAGE value="remove old contents" />
     <MESSAGE value="copy files" />
-    <option name="LAST_COMMIT_MESSAGE" value="copy files" />
+    <MESSAGE value="frontend" />
+    <MESSAGE value="change target release" />
+    <MESSAGE value="add doku" />
+    <MESSAGE value="copy www" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy www" />
   </component>
 </project>
