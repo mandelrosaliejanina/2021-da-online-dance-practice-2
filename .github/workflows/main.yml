@@ -76,7 +76,7 @@ jobs:
 
       - name: copy jar files
         run: |
-          cp apprsv/target/*.jar distribution/${{ env.DISTRIBUTION_FOLDER }}
+          cp appsrv/target/*.jar distribution/${{ env.DISTRIBUTION_FOLDER }}
 
       - name: build appsrv docker image
         run: |
