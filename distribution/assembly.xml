@@ -21,7 +21,7 @@
             <outputDirectory>./docker/appsrv/deployments</outputDirectory>
             <includes>
                 <include>*-runner</include>
-                <include>leocloud-*.jar</include>
+                <include>*.jar</include>
             </includes>
         </fileSet>
         <fileSet>
