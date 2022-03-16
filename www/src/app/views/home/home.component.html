@@ -5,7 +5,7 @@
 <div class="content-body">
   <div *ngIf="levels">
     <span (click)="selectLevel(level)" *ngFor="let level of levels"
-          [class.selected]="selectedLevel?.id === level.id">{{level.description}}</span>
+          [class.selected]="selectedLevel?.id === level.id">{{level.id}}</span>
   </div>
 
   <div *ngIf="courses">
@@ -14,4 +14,5 @@
   </div>
 
   <app-media-content *ngIf="selectedCourse" [course]="selectedCourse"></app-media-content>
+  <mat-hint *ngIf="!selectedCourse">Bitte wählen Sie einen Kurs aus.</mat-hint>
 </div>
