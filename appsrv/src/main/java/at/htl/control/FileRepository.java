@@ -2,6 +2,7 @@ package at.htl.control;
 
 import at.htl.entity.ContentType;
 import at.htl.entity.D_File;
+import at.htl.entity.Level;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -89,5 +90,7 @@ public class FileRepository implements PanacheRepository<D_File> {
                 new D_File(filename, path, description, contentType)
         );
     }
-
+    public D_File save(D_File file){
+        return getEntityManager().merge(file);
+    }
 }

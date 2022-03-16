@@ -10,4 +10,8 @@ import javax.transaction.Transactional;
 @Transactional
 public class LevelRepository implements PanacheRepositoryBase<Level, String> {
 
+    public Level save(Level level){
+        return getEntityManager().merge(level);
+    }
+
 }
