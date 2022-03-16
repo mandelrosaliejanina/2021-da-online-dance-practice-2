@@ -1,2 +1,4 @@
 <app-video *ngFor="let file of getVideoFiles(files)" [file]="file"></app-video>
 <app-audio *ngFor="let file of getAudioFiles(files)" [file]="file"></app-audio>
+
+<mat-error *ngIf="files?.length===0">Es sind zurzeit keine Inhalte vorhanden.</mat-error>
