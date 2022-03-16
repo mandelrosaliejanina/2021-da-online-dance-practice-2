@@ -1,5 +1,6 @@
 package at.htl.control;
 
+import at.htl.entity.Course;
 import at.htl.entity.D_File;
 import at.htl.entity.Usage;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -8,6 +9,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import java.io.File;
+import java.nio.file.Path;
 import java.util.List;
 
 @ApplicationScoped
@@ -47,5 +50,11 @@ public class UsageRepository implements PanacheRepository<Usage> {
                 .createNamedQuery("Usage.usageExistsInCourse",Long.class)
                 .setParameter("ID", courseId);
         return typedQuery.getSingleResult() > 0;
+    }
+    public File pathOf (Course course){
+        // var root = Path.of("var/www/html/content");
+        var root = Path.of("src/main/resources/META-INF.resources/mediafiles");
+        var folder = root.resolve(course.title);
+        return folder.toFile();
     }
 }
