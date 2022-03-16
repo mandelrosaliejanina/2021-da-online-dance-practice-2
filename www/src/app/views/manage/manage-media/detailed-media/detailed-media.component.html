@@ -3,15 +3,18 @@
     <mat-select [(value)]="selectedCourse">
       <mat-option *ngFor="let course of courses" [value]="course">{{ course.title }}</mat-option>
     </mat-select>
+
     <mat-hint>Zuweisung der Datei zum Kurs</mat-hint>
   </mat-form-field>
+
   <mat-form-field>
     <mat-label>
       Beschreibung
     </mat-label>
+
     <mat-hint>Beschreibung der Datei</mat-hint>
-    <textarea matInput formControlName="description">
-    </textarea>
+
+    <textarea matInput formControlName="description"></textarea>
   </mat-form-field>
 </div>
 
@@ -21,8 +24,12 @@
     <p id="textContainer">
       Wählen Sie eine Datei aus : <input id="buttonCreate" (change)="onFileSelect($event)" name="file" type="file"/>
     </p>
-    <button id="upload" mat-button type="submit">Hochladen</button>
-    <button mat-button (click)="close()" color="warn">Abbrechen</button>
+
   </form>
+</div>
+
+<div id="button-wrapper">
+  <button id="upload" mat-raised-button type="submit" color="primary">Hochladen</button>
+  <button mat-raised-button (click)="close()" color="warn">Abbrechen</button>
 </div>
 

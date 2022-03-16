@@ -11,6 +11,14 @@ import javax.persistence.*;
         @NamedQuery(
                 name = "Usage.findByCourseId",
                 query = "select u.file from Usage u where u.course.id = :ID"
+        ),
+        @NamedQuery(
+                name = "Usage.usageExistsInCourse",
+                query = "select count(u) from Usage u where u.course.id = :ID"
+        ),
+        @NamedQuery(
+                name = "Usage.usageExistsInFile",
+                query = "select count(u) from Usage u where u.file.id = :ID"
         )
 })
 public class Usage extends PanacheEntityBase {

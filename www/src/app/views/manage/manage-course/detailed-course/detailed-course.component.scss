@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  width: 40vw;
+}
+
+mat-form-field {
+  width: 45%;
+  margin: 0 2%;
+}
+
+#description {
+  width: 94%;
+}
+
+#button-wrapper {
+  padding: 0 2vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-left: 1vw;
+  }
+}

@@ -1,4 +1,4 @@
 <span class="content-type">Audio<mat-icon>audiotrack</mat-icon></span>
 <h3>{{file.name}}</h3>
-<audio [src]="'assets/'+file.path" controls></audio>
+<audio [src]="fileBaseUrl + file.path" controls></audio>
 <span>{{file.description}}</span>

@@ -78,7 +78,6 @@ export class ManageAccesstokenComponent implements OnInit {
       token: accessToken.token,
       course: accessToken.course,
       activationDate: accessToken.activationDate ? this.formatDate(new Date(accessToken.activationDate)) : null,
-      daysValid: accessToken.daysValid,
       expireDate: accessToken.expireDate ? this.formatDate(new Date(accessToken.expireDate)) : null,
     };
   }

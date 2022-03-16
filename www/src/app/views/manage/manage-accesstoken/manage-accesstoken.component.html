@@ -4,7 +4,6 @@
     <p class="course">Kurs</p>
     <p class="activationDate">Datum gültig ab</p>
     <p class="expireDate">Datum gültig bis</p>
-    <p class="daysValid">Tage gültig</p>
     <p class="button-wrapper"></p>
   </div>
 
@@ -13,7 +12,6 @@
     <p class="course">{{ accessToken.course.title }}</p>
     <p class="activationDate">{{ (accessToken.activationDate | date: 'dd.MM.YYYY') || '-'}}</p>
     <p class="expireDate">{{ (accessToken.expireDate | date: 'dd.MM.YYYY') || '-'}}</p>
-    <p class="daysValid">{{ accessToken.daysValid || '-'}}</p>
 
     <div class="button-wrapper">
       <button mat-icon-button>

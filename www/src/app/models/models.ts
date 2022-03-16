@@ -34,7 +34,6 @@ export interface AccessToken {
   token: string,
   course: Course,
   activationDate?: Date,
-  daysValid?: number,
   expireDate?: Date,
   isEditable?: boolean
 }

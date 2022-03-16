@@ -15,7 +15,7 @@ import java.io.IOException;
 @Transactional
 public class FileRepository implements PanacheRepository<D_File> {
 
-    public final String TARGET_UPLOAD_FOLDER = "Downloads/";
+    public final String TARGET_UPLOAD_FOLDER = "mediafiles/";
 
     public String getFileName(MultivaluedMap<String, String> header) {
         String[] contentDisposition = header.getFirst("Content-Disposition").split(";");
@@ -39,8 +39,14 @@ public class FileRepository implements PanacheRepository<D_File> {
 
     //old upload
     public D_File writeFile(byte[] content, String fileName) throws IOException {
-        File outputDir = new File(imageHome(),TARGET_UPLOAD_FOLDER);
-        File file = new File(TARGET_UPLOAD_FOLDER + fileName);
+        String[] fileTypeArray = fileName.split("\\.");
+        String[] parts = fileName.split("/");
+
+        String fileEnding = fileTypeArray[1].equals("mp4") || fileTypeArray[1].equals("mov") ? "video/" : "audio/";
+
+        File outputDir = new File(TARGET_UPLOAD_FOLDER, fileEnding);
+
+        File file = new File(TARGET_UPLOAD_FOLDER+fileEnding + fileName);
 
         if (!outputDir.exists()) {
             outputDir.mkdirs();
@@ -50,8 +56,7 @@ public class FileRepository implements PanacheRepository<D_File> {
 
         fop.write(content);
 
-        String[] fileTypeArray = fileName.split("\\.");
-        String[] parts = fileName.split("/");
+
         String filename = parts[parts.length - 1];
 
         if (fileTypeArray[1].equals("mp4") || fileTypeArray[1].equals("mov")) {

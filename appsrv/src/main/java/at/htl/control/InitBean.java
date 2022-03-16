@@ -7,6 +7,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import java.io.File;
+import java.nio.file.Paths;
 
 @ApplicationScoped
 public class InitBean {
@@ -38,6 +40,18 @@ public class InitBean {
 
     @Transactional
     void initDb() {
+        String resourcesPath = Paths
+                .get("")
+                .toAbsolutePath() +
+                "/src/main/resources/META-INF/resources/";
+
+        File mediafilesFolder = new File(resourcesPath + "mediafiles");
+        File videoFolder = new File(resourcesPath + "mediafiles/video");
+        File audioFolder = new File(resourcesPath + "mediafiles/audio");
+
+        mediafilesFolder.mkdir();
+        videoFolder.mkdir();
+        audioFolder.mkdir();
 
         //Level
         Level grundkurs = new Level("GRUNDKURS", "GRUNDKURS");
@@ -97,11 +111,11 @@ public class InitBean {
         fileRepository.persist(senorita);
         D_File ice = new D_File("LikeIceinthesunshine", "mediafiles/audio/03_LikeIceinthesunshine.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(ice);
-        D_File coupe = new D_File("CoupedeVille", "mediafiles/audio/04_CoupedeVille.mp3", "description", ContentType.valueOf("AUDIO"));
+        D_File coupe = new D_File("CoupedeVille", "mediafiles/audio/04_CoupedeVille.mp3", "Perfekt für lässige Tänze!", ContentType.valueOf("AUDIO"));
         fileRepository.persist(coupe);
         D_File california = new D_File("HotelCalifornia-DJRoy", "mediafiles/audio/05_HotelCalifornia-DJRoy-(LatinGoodVibration2)-AO-WM,EN.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(california);
-        D_File wonder = new D_File("wonderwhy slow-waltz", "mediafiles/audio/06_lwonderwhy-03-slow-waltz.wav", "description", ContentType.valueOf("AUDIO"));
+        D_File wonder = new D_File("wonderwhy slow-waltz", "mediafiles/audio/06_lwonderwhy-03-slow-waltz.wav", "Perfekte Musik für Ihre Walzertänze!", ContentType.valueOf("AUDIO"));
         fileRepository.persist(wonder);
         D_File promises = new D_File("Promises-TanzorchesterKlausHallen", "mediafiles/audio/07-Promises-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(promises);
@@ -121,7 +135,7 @@ public class InitBean {
         fileRepository.persist(tango);
         D_File lieblingmensch = new D_File("Lieblingsmensch Lila", "mediafiles/audio/15-29-Lieblingsmensch-Lila-(BallroomNights8)-Casaphon-PP,DE.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(lieblingmensch);
-        D_File roses = new D_File("RosesFromTheSouth", "mediafiles/audio/16_WW-RosesFromTheSouth.mp3", "description", ContentType.valueOf("AUDIO"));
+        D_File roses = new D_File("RosesFromTheSouth", "mediafiles/audio/16_WW-RosesFromTheSouth.mp3", "Klassisches Lied perfekt für Ihre Übungstunden!", ContentType.valueOf("AUDIO"));
         fileRepository.persist(roses);
         D_File paso = new D_File("PASO-Manolita60", "mediafiles/audio/17-PASO-Manolita60.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(paso);
@@ -133,29 +147,27 @@ public class InitBean {
         fileRepository.persist(dancelife);
         D_File bailando = new D_File("Bailando", "mediafiles/audio/21_SAL-Bailando(feat.DescemerBu.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(bailando);
-        D_File ready = new D_File("I'mReady", "mediafiles/audio/22_I'mReady.mp3", "description", ContentType.valueOf("AUDIO"));
+        D_File ready = new D_File("I'mReady", "mediafiles/audio/22_I'mReady.mp3", "Starten Sie mit Ihren Tanzeinheiten !", ContentType.valueOf("AUDIO"));
         fileRepository.persist(ready);
         D_File df = new D_File("Warum hast du nicht nein gesagt", "mediafiles/audio/23_DF-Warumhastdunichtneinges.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(df);
-        D_File ex = new D_File("Ex'sAndOh's", "mediafiles/audio/\"24-50-Ex'sAndOh's-Swingpop!-(BallroomNights8)-Casaphon-SW,EN.mp3", "description", ContentType.valueOf("AUDIO"));
+        D_File ex = new D_File("Ex'sAndOh's", "mediafiles/audio/\"24-50-Ex'sAndOh's-Swingpop!-(BallroomNights8)-Casaphon-SW,EN.mp3", "Perfekt für lässige Tänze!", ContentType.valueOf("AUDIO"));
         fileRepository.persist(ex);
-        D_File hold = new D_File("HoldMyGirl", "mediafiles/audio>/25-29-HoldMyGirl-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
+        D_File hold = new D_File("HoldMyGirl", "mediafiles/audio>/25-29-HoldMyGirl-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "Nun können Sie direkt mit Ihren Tanzeinheiten starten!", ContentType.valueOf("AUDIO"));
         fileRepository.persist(hold);
-        D_File sed = new D_File("SeddeTi...DustinRichie...", "mediafiles/audio/26_SeddeTi...DustinRichie...(bachatanew2019)(audio).mp3", "description", ContentType.valueOf("AUDIO"));
+        D_File sed = new D_File("SeddeTi...DustinRichie...", "mediafiles/audio/26_SeddeTi...DustinRichie...(bachatanew2019)(audio).mp3", "Perfekt für lässige Tänze!", ContentType.valueOf("AUDIO"));
         fileRepository.persist(sed);
         D_File bang = new D_File("BangBang", "mediafiles/audio/27-BangBang,Part2-Genio&Pierrots-(LatinMegaHits6)-CM-IT,PP.mp3", "description", ContentType.valueOf("AUDIO"));
         fileRepository.persist(bang);
 
-        D_File bachata = new D_File("Bachata-OnlineTanzkurs", "mediafiles/video/Bachata-OnlineTanzkurs.mov", "description", ContentType.valueOf("VIDEO"));
+        D_File bachata = new D_File("Bachata-OnlineTanzkurs", "mediafiles/video/Bachata-OnlineTanzkurs.mov", "Nun können Sie direkt mit Ihren Tanzeinheiten starten!", ContentType.valueOf("VIDEO"));
         fileRepository.persist(bachata);
 
-        D_File wienerwalz = new D_File("WienerWalzer", "mediafiles/video/WienerWalzer.mov", "beschreibung babafb" +
-                "iasjdivpaiüsdvihadbfvjbajdfbvbadjbfjvbadjbfjvhbadfj  " +
-                "absjdfbvasdb fjvhbadfsbvjhbdfj", ContentType.valueOf("VIDEO"));
-        fileRepository.persist(wienerwalz);
-        D_File hiphop = new D_File("HipHopBartSimpson !!", "mediafiles/video/HipHopBartSimpson.mov", "description", ContentType.valueOf("VIDEO"));
+        D_File hiphop = new D_File("HipHopBartSimpson !!", "mediafiles/video/SalsaChrisFigurdesMonats.mp4", "Der HipHopBartSimpson Streetdance gehört zum Tanzstil Hip-Hop.", ContentType.valueOf("VIDEO"));
         fileRepository.persist(hiphop);
 
+        D_File wienerwalz = new D_File("WienerWalzer", "mediafiles/video/WienerWalzer.mp4", "Hier Lernen Sie die Grundlagen des Wiener Walzers!", ContentType.valueOf("VIDEO"));
+        fileRepository.persist(wienerwalz);
         //Usage
         // Usage usage01 = new Usage(discofox, salsa);
         //usageRepository.persist(usage01);
@@ -165,8 +177,6 @@ public class InitBean {
         usageRepository.persist(usage03);
         Usage usage04 = new Usage(pirvatstunden, dancelife);
         usageRepository.persist(usage04);
-        Usage usage05 = new Usage(discofox, wienerwalz);
-        usageRepository.persist(usage05);
 /*        Usage usage06 = new Usage(discofox,hiphop);
         usageRepository.persist(usage06);*/
         Usage usage07 = new Usage(discofox, roses);
@@ -187,6 +197,12 @@ public class InitBean {
         usageRepository.persist(usage14);
         Usage usage15 = new Usage(pirvatstunden, tango);
         usageRepository.persist(usage15);
+        Usage usage16 = new Usage(discofox, sed);
+        usageRepository.persist(usage16);
+        Usage usage17 = new Usage(discofox, ready);
+        usageRepository.persist(usage17);
+        Usage usage05 = new Usage(discofox, wienerwalz);
+        usageRepository.persist(usage05);
 
 
         AccessToken accessToken = new AccessToken(discofox);

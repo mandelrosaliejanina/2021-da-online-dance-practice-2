@@ -6,27 +6,17 @@ import at.htl.control.UsageRepository;
 import at.htl.entity.Course;
 import at.htl.entity.D_File;
 import at.htl.entity.Usage;
-import org.apache.commons.io.IOUtils;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
-
-import org.jboss.resteasy.plugins.providers.multipart.InputPart;
-import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
 
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.json.Json;
-import javax.json.JsonObjectBuilder;
-import javax.json.JsonValue;
 import javax.transaction.Transactional;
 import javax.transaction.UserTransaction;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import java.io.*;
-import java.net.http.HttpRequest;
-import java.util.List;
-import java.util.Map;
+import java.nio.file.Paths;
 
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
@@ -108,8 +98,11 @@ public class FileEndpoint {
                             @PathParam("imagename") String imagename,
                             @QueryParam("description") String description,
                             @QueryParam("courseId") long courseId) {
-        String path = fileRepository.imageHome() + "/" + fileRepository.TARGET_UPLOAD_FOLDER;
-        D_File fileEntry = fileRepository.createFile(imagename, path ,description);
+        //String path = fileRepository.imageHome() + "/" + fileRepository.TARGET_UPLOAD_FOLDER;
+        String lastdir = imagename.contains(".mp4") || imagename.contains(".mov") ? "video/" : "audio/";
+        String path = Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + fileRepository.TARGET_UPLOAD_FOLDER + lastdir;
+
+        D_File fileEntry = fileRepository.createFile(imagename, fileRepository.TARGET_UPLOAD_FOLDER + lastdir + imagename ,description);
         File file = new File(path, imagename);
         try (var os = new FileOutputStream(file)) {
             inputStream.transferTo(os);
@@ -119,29 +112,36 @@ public class FileEndpoint {
 
         Course course = courseRepository.find("id", courseId).stream().findFirst().orElse(null);
         usageRepository.persist(new Usage(course, fileEntry));
-        return Response.ok().build();
+        return Response.ok().entity(fileEntry).build();
     }
 
     @GET
-    @Path("{id}")
+    @Path("/{id}")
     @RolesAllowed({"STUDENT", "TEACHER"})
     public Response findById(@PathParam("id") long id) {
         return Response.ok(fileRepository.findById(id)).build();
     }
 
     @DELETE
-    @Path("{id}")
-    @RolesAllowed("TEACHER")
+    @Path("/{id}")
+    @Transactional
+    //@RolesAllowed("TEACHER")
     public Response delete(@PathParam("id") Long id) {
         try {
+            boolean exists = usageRepository.usageExistsInFile(id);
+            if(exists){
+                usageRepository.deleteUsageByFileId(id);
+            }
             fileRepository.deleteById(id);
+
             return Response
                     .ok()
                     .build();
         } catch (IllegalArgumentException e) {
+            System.out.println(e);
             return Response
                     .status(400)
-                    .header("Reason", "File with id" + id + "does not exist")
+                    .header("Reason", "File with id " + id + " does not exist")
                     .build();
         }
     }

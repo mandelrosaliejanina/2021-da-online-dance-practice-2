@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {firstValueFrom} from "rxjs";
 import {AuthService} from "./auth.service";
-import {Course} from "../models/models";
+import {Course, DFile} from "../models/models";
 
 @Injectable({
   providedIn: 'root'
@@ -34,9 +34,9 @@ export class BackendService {
     }));
   }
 
-  public postFile(route: string, body: Blob, imagename: string, course: Course, description: string): Promise<Object> {
+  public postFile(route: string, body: Blob, imagename: string, course: Course, description: string): Promise<DFile> {
     return firstValueFrom(
-      this.http.post(`${this.baseUrl}/file/${imagename}?courseId=${course.id}&description=${description}`, body)
+      this.http.post<DFile>(`${this.baseUrl}/file/${imagename}?courseId=${course.id}&description=${description}`, body)
     );
   }
 

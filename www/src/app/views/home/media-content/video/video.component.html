@@ -1,4 +1,4 @@
 <span class="content-type">Video<mat-icon>movie</mat-icon></span>
-<video [src]="'assets/'+file.path" controls></video>
+<video [src]="fileBaseUrl + file.path" controls></video>
 <h3>{{file.name}}</h3>
 <span>{{file.description}}</span>

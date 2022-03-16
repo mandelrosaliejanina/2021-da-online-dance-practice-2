@@ -8,6 +8,16 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "D_ACCESS_TOKEN")
+@NamedQueries({
+        @NamedQuery(
+                name = "AccessToken.accessTokenExistsInCourse",
+                query = "select count(a) from AccessToken a where a.course.id = :ID"
+        ),
+        @NamedQuery(
+                name = "AccessToken.accessTokenExists",
+                query = "select count(a) from AccessToken a where a.course.id = :ID"
+        )
+})
 public class AccessToken extends PanacheEntityBase {
 
     @Id
@@ -20,16 +30,12 @@ public class AccessToken extends PanacheEntityBase {
     @Column(name = "AT_ACTIVATION_DATE")
     public LocalDate activationDate;
 
-    @Column(name = "AT_DAYS_VALID")
-    public Integer daysValid;
-
     @Column(name = "AT_EXPIRE_DATE")
     public LocalDate expireDate;
 
-    public AccessToken(Course course, Integer daysValid, LocalDate expireDate) {
+    public AccessToken(Course course, LocalDate expireDate) {
         this();
         this.course = course;
-        this.daysValid = daysValid;
         this.expireDate = expireDate;
     }
 
@@ -48,10 +54,6 @@ public class AccessToken extends PanacheEntityBase {
 
     public void setActivationDate(LocalDate activationDate) {
         this.activationDate = activationDate;
-    }
-
-    public Integer getDaysValid() {
-        return daysValid;
     }
 
     public LocalDate getExpireDate() {
