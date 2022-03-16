@@ -12,6 +12,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "D_USER")
 @UserDefinition
+/*@NamedQueries({
+        @NamedQuery(
+                name = "User.findById",
+                query = "select u from User u where u.id like :ID"
+        )
+})*/
 public class User extends PanacheEntityBase {
 
     @Id

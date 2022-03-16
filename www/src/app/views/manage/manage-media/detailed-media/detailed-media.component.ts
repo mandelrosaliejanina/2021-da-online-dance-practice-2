@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {Course, Usage} from "../../../../models/models";
+import {Course, DFile, Usage} from "../../../../models/models";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {BackendService} from "../../../../services/backend.service";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
@@ -15,6 +15,7 @@ export class DetailedMediaComponent implements OnInit {
   courses : Course [] |null;
   uploadForm: FormGroup;
   selectedCourse: Course | null;
+  public value: DFile | undefined;
 
 
 
@@ -54,9 +55,10 @@ export class DetailedMediaComponent implements OnInit {
       }
 
       const blobToUpload = await this.fileToBlob(file);
-      this.backend.postFile('', blobToUpload, imagename,this.selectedCourse!,this.uploadForm.get("description")?.value).then(() => {
+      this.backend.postFile('', blobToUpload, imagename,this.selectedCourse!,this.uploadForm.get("description")?.value).then((value:DFile) => {
+        this.value = value
         this.openSnackBar("Datei hochladen war erfolgreich!")
-        this.close()
+        this.dialogRef.close(value);
       })
     }
   }

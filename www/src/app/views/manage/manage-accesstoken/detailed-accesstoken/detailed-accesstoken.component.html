@@ -1,11 +1,13 @@
 <div *ngIf="accessToken">
-  <h2>{{accessToken.token}} </h2>
+  <h2 *ngIf="accessToken.token">{{accessToken.token}} bearbeiten</h2>
+  <h2 *ngIf="!accessToken.token">AccessToken erstellen</h2>
 
   <mat-form-field appearance="fill">
     <mat-select [(value)]="accessToken.course">
       <mat-option *ngFor="let course of courses" [value]="course">{{ course.title }}</mat-option>
     </mat-select>
-    <mat-hint>für welchen kurs gilt dieser token</mat-hint>
+
+    <mat-hint>für welchen Kurs gilt dieser Token</mat-hint>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -14,16 +16,13 @@
       <input [(ngModel)]="accessToken.activationDate" matStartDate placeholder="Start date">
       <input [(ngModel)]="accessToken.expireDate" matEndDate placeholder="End date">
     </mat-date-range-input>
+
     <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
     <mat-date-range-picker #picker></mat-date-range-picker>
   </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Tage gültig</mat-label>
-    <input [(ngModel)]="accessToken.daysValid" matInput type="number">
-    <mat-hint>gültigkeitsdauer ab der ersten verwendung in tagen (24h)</mat-hint>
-  </mat-form-field>
-
-  <button (click)="cancel()" color="warn" mat-raised-button>Abbrechen</button>
-  <button (click)="save()" color="primary" mat-raised-button>Speichern</button>
+  <div id="button-wrapper">
+    <button (click)="cancel()" color="warn" mat-raised-button>Abbrechen</button>
+    <button (click)="save()" color="primary" mat-raised-button>Speichern</button>
+  </div>
 </div>

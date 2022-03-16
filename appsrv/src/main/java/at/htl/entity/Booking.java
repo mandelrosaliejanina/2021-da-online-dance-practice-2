@@ -6,6 +6,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "D_BOOKING")
+@NamedQueries({
+        @NamedQuery(
+                name = "Booking.bookingExistsInCourse",
+                query = "select count(b) from Booking b where b.course.id = :ID"
+        ),
+})
 public class Booking extends PanacheEntityBase {
 
     @Id

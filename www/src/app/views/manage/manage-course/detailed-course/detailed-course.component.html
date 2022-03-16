@@ -1,15 +1,9 @@
 <form [formGroup]="formGroup">
-  <h2>Neuen Kurs erstellen </h2>
-
+  <h2>Neuen Kurs erstellen</h2>
 
   <mat-form-field appearance="fill">
     <mat-label>Titel</mat-label>
     <input formControlName="title" name="title" matInput>
-  </mat-form-field>
-  <br>
-  <mat-form-field appearance="fill">
-    <mat-label>Beschreibung</mat-label>
-    <input formControlName="description" name="description" matInput>
   </mat-form-field>
 
   <mat-form-field *ngIf="levels" appearance="fill">
@@ -17,10 +11,18 @@
       <mat-option *ngFor="let level of levels" [value]="level">{{ level.description }}</mat-option>
     </mat-select>
   </mat-form-field>
+
   <br>
 
-  <button (click)="cancel()" color="warn" mat-raised-button>Abbrechen</button>
-  <button (click)="save()" color="primary" mat-raised-button>Speichern</button>
+  <mat-form-field appearance="fill" id="description">
+    <mat-label>Beschreibung</mat-label>
+    <input formControlName="description" name="description" matInput>
+  </mat-form-field>
 
+  <br>
 
+  <div id="button-wrapper">
+    <button (click)="cancel()" color="warn" mat-raised-button>Abbrechen</button>
+    <button (click)="save()" color="primary" mat-raised-button>Speichern</button>
+  </div>
 </form>

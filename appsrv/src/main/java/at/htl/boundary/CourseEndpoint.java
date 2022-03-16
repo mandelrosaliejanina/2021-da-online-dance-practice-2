@@ -1,9 +1,6 @@
 package at.htl.boundary;
 
-import at.htl.control.AccessTokenRepository;
-import at.htl.control.CourseRepository;
-import at.htl.control.LevelRepository;
-import at.htl.control.UsageRepository;
+import at.htl.control.*;
 import at.htl.entity.AccessToken;
 import at.htl.entity.Course;
 import at.htl.entity.D_File;
@@ -14,6 +11,7 @@ import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -39,6 +37,9 @@ public class CourseEndpoint {
 
     @Inject
     AccessTokenRepository accessTokenRepository;
+
+    @Inject
+    BookingRepository bookingRepository;
 
     @Inject
     Logger logger;
@@ -73,8 +74,19 @@ public class CourseEndpoint {
     @DELETE
     @Path("/{id}")
     @RolesAllowed("TEACHER")
+    @Transactional
     public Response delete(@PathParam("id") Long id) {
+
         try {
+            if (usageRepository.usageExistsInCourse(id)) {
+                usageRepository.deleteUsageByCourseId(id);
+            }
+            if (accessTokenRepository.accessTokenExistsInCourse(id)) {
+                accessTokenRepository.deleteAccessTokenByCourseId(id);
+            }
+            if (bookingRepository.bookingExistsInCourse(id)) {
+                bookingRepository.deleteBookingByCourseId(id);
+            }
             courseRepository.deleteById(id);
             return Response
                     .noContent()

@@ -40,7 +40,9 @@ export class ManageMediaComponent implements OnInit {
   submit() {
     const formData = new FormData();
     formData.append("file", this.uploadForm.get("file")?.value);
-    this.backendservice.post("file", formData).then(console.log);
+    this.backendservice.post("file", formData).then(value => {
+      this.contents?.push(value as DFile);
+    });
     alert("file is uploaded")
   }
 
@@ -59,10 +61,8 @@ export class ManageMediaComponent implements OnInit {
   create() {
     this.dialog.open(DetailedMediaComponent).afterClosed().subscribe(value => {
       if (value) {
-        this.backendservice.post('usage', this.buildUsageObjectForServer(value as Usage))
-          .then(value => {
-            this.contents?.push(value as DFile);
-          });
+        this.contents?.push(value as DFile);
+        //this.backendservice.post('usage', this.buildUsageObjectForServer(value as Usage));
       }
     });
   }

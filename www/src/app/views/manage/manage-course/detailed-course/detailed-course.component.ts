@@ -14,11 +14,12 @@ export class DetailedCourseComponent implements OnInit {
   selectedLevel: Level| null;
   levels: Level[] | null;
   formGroup: FormGroup;
+  course: Course;
 
   constructor(private readonly backend: BackendService,
               private readonly dialogRef: MatDialogRef<DetailedCourseComponent>,
               @Inject(MAT_DIALOG_DATA) private readonly data: Course) {
-
+    this.course = data;
     this.levels = null;
     this.selectedLevel = null;
     this.formGroup = new FormGroup( {
