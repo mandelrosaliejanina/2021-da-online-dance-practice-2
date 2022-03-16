@@ -14,6 +14,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MediaContentComponent} from './media-content/media-content.component';
 import {VideoComponent} from './media-content/video/video.component';
 import {AudioComponent} from './media-content/audio/audio.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 const routes: Routes = [
   {
@@ -43,7 +44,8 @@ const routes: Routes = [
     MatIconModule,
     FormsModule,
     FlexModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule
   ]
 })
 export class HomeModule {
