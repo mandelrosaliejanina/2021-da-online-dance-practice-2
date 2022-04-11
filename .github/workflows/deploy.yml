@@ -19,7 +19,7 @@ jobs:
       - name: Package
         run: |
           cd appsrv
-          ./mvnw package -DskipTests
+          mvn package -DskipTests
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1.1
         with:
