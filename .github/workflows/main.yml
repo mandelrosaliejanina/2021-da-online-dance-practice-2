@@ -4,8 +4,6 @@
 name: build and deploy (develop)
 
 on:
-  push:
-    branches: [ main ]
 
   workflow_dispatch:
     inputs:
