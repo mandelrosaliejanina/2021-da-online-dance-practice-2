@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  backend:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -44,3 +44,27 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           privateKey: ${{ secrets.SSH_PRIVATE_KEY}}
+  frontend:
+    runs-on: ubuntu-20.04
+    steps:
+        - uses: actions/checkout@v2
+        - name: build frontend
+          run: |
+            cd www
+            npm install
+            npm run build
+        - name: Deploy to server
+          uses: easingthemes/ssh-deploy@v2.2.11
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            SOURCE: appsrv/
+            REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+            REMOTE_USER: ${{ secrets.REMOTE_USER }}
+            TARGET: /var/www/html
+  bye:
+    needs:
+      - backend
+      - frontend
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "done"
