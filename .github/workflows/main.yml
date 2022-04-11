@@ -121,7 +121,6 @@ jobs:
       - name: deploy to server
         working-directory: distribution
         run: |
-#          ssh server "rm -rf ~/dist && mkdir -p ~/dist"
           scp -r *.sh server/ server:~/dist/
           scp docker-compose-production.yml server:~/dist
           ssh server "chmod +x ~/dist/*.sh"
