@@ -46,7 +46,7 @@ jobs:
 
       - name: build quarkus application
         run: |
-          mvn -Dquarkus.package.type=uber-jar -Dquarkus-profile=prod -Dbase.href="/" -B package
+          mvn -Dquarkus.package.type=uber-jar -Dquarkus-profile=prod -Dbase.href="/" -B package -DskipTests
 
       - name: install nodejs
         uses: actions/setup-node@v2
