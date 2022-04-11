@@ -18,7 +18,7 @@ jobs:
           step: restore
       - name: Package
         run: |
-          cd backend
+          cd appsrv
           ./mvnw package -DskipTests
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1.1
@@ -28,7 +28,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.2.11
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SOURCE: backend/
+          SOURCE: appsrv/
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ secrets.REMOTE_TARGET }}
