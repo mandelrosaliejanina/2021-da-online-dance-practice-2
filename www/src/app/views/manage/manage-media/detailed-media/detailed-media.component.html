@@ -29,7 +29,10 @@
 </div>
 
 <div id="button-wrapper">
-  <button id="upload" mat-raised-button type="submit" (click)="submit()" color="primary">Hochladen</button>
+  <button id="upload" mat-raised-button type="submit" (click)="submit()" color="primary">
+    <span *ngIf="!loading">Hochladen</span>
+    <span *ngIf="loading">Laden...</span>
+  </button>
   <button mat-raised-button (click)="close()" color="warn">Abbrechen</button>
 </div>
 

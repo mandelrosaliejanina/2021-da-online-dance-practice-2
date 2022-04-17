@@ -11,12 +11,12 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./detailed-media.component.scss']
 })
 export class DetailedMediaComponent implements OnInit {
-  usage : Usage | null;
-  courses : Course [] |null;
+  usage: Usage | null;
+  courses: Course [] | null;
   uploadForm: FormGroup;
   selectedCourse: Course | null;
   public value: DFile | undefined;
-
+  public loading: boolean;
 
 
   constructor(private readonly backend: BackendService,
@@ -28,9 +28,10 @@ export class DetailedMediaComponent implements OnInit {
     this.courses = null;
     this.uploadForm = this.formBuilder.group({
       file: [''],
-      description: ['',Validators.required]
+      description: ['', Validators.required]
     })
     this.selectedCourse = null;
+    this.loading = false;
   }
 
   ngOnInit(): void {
@@ -44,37 +45,38 @@ export class DetailedMediaComponent implements OnInit {
     const formData = new FormData();
     formData.append("file", this.uploadForm.get("file")?.value);
 
-    if(this.uploadForm.get("file")){
+    if (this.uploadForm.get("file")) {
       const imagename = this.uploadForm.get("file")?.value.name
 
       let file = this.uploadForm.get("file")?.value;
 
       //überprüfen ob file zu groß
-      if(file.size > 1024000000){
+      if (file.size > 1024000000) {
         alert("Datei is zu groß!")
       }
 
       const blobToUpload = await this.fileToBlob(file);
-      this.backend.postFile('', blobToUpload, imagename,this.selectedCourse!,this.uploadForm.get("description")?.value).then((value:DFile) => {
+      this.loading = true;
+      this.backend.postFile('', blobToUpload, imagename, this.selectedCourse!, this.uploadForm.get("description")?.value).then((value: DFile) => {
         this.value = value
         this.openSnackBar("Datei hochladen war erfolgreich!")
         this.dialogRef.close(value);
-      })
+      }).finally( () => this.loading = false);
     }
   }
 
-  close(): void{
+  close(): void {
     this.dialogRef.close();
   }
 
-  openSnackBar(message: string):void {
-    this._snackBar.open(message,"",{duration: 2500});
+  openSnackBar(message: string): void {
+    this._snackBar.open(message, "", {duration: 2500});
   }
 
 ///
-  async fileToBlob(file:File){
+  async fileToBlob(file: File) {
     let blobParts = new Uint8Array(await file.arrayBuffer());
-    return new Blob([blobParts], {type: file.type })
+    return new Blob([blobParts], {type: file.type})
   }
 
 
