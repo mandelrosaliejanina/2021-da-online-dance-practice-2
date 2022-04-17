@@ -6,6 +6,8 @@ services:
     ports:
       - 8080:8080
     restart: unless-stopped
+    volumes:
+      - /deployments/src/main/resources/META-INF/resources/mediafiles/:/var/www/html/assets/
 
   postgres:
     image: postgres:13
