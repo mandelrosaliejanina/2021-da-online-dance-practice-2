@@ -6,6 +6,7 @@ import at.htl.control.UsageRepository;
 import at.htl.entity.Course;
 import at.htl.entity.D_File;
 import at.htl.entity.Usage;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
 import javax.annotation.security.RolesAllowed;
@@ -14,13 +15,19 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.transaction.UserTransaction;
 import javax.ws.rs.*;
-import javax.ws.rs.core.*;
-import java.io.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Paths;
 
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes({"video/mp4", MediaType.APPLICATION_OCTET_STREAM , "video/quicktime","audio/mpeg"})
+@Consumes({"video/mp4", MediaType.APPLICATION_OCTET_STREAM, "video/quicktime", "audio/mpeg"})
 @Path("/file")
 
 public class FileEndpoint {
@@ -41,6 +48,9 @@ public class FileEndpoint {
 
     @Inject
     Logger logger;
+
+    @ConfigProperty(name = "QUARKUS_ENV", defaultValue = "dev")
+    String quarkusEnv;
 
     @GET
     @Path("/findall")
@@ -99,17 +109,20 @@ public class FileEndpoint {
                             @QueryParam("description") String description,
                             @QueryParam("courseId") long courseId) {
 
-        System.out.println(imagename);
-        //String path = fileRepository.imageHome() + "/" + fileRepository.TARGET_UPLOAD_FOLDER;
         String lastdir = imagename.contains(".mp4") || imagename.contains(".mov") ? "video/" : "audio/";
         Course course = courseRepository.find("id", courseId).stream().findFirst().orElse(null);
-        String path =  "";
-        //fileRepository.TARGET_UPLOAD_FOLDER + lastdir + course.level.description.toLowerCase() + "/"+ course.title + "/";
+        String path = fileRepository.TARGET_UPLOAD_FOLDER + lastdir + course.level.description.toLowerCase() + "/" + course.title + "/";
+        String absolutePath;
+        if (quarkusEnv.equals("prod")) {
+            absolutePath = "/var/www/html/assets" + path;
+        } else {
+            absolutePath = Paths.get("").toAbsolutePath() + "/src/main/resources/META-INF/resources/" + path;
+        }
 
-        D_File fileEntry = fileRepository.createFile(imagename, path + imagename ,description);
-        File dir = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path);
+        D_File fileEntry = fileRepository.createFile(imagename, path + imagename, description);
+        File dir = new File(absolutePath);
         dir.mkdirs();
-        File file = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path, imagename);
+        File file = new File(absolutePath, imagename);
         System.out.println(file.getAbsolutePath());
         try (var os = new FileOutputStream(file)) {
             inputStream.transferTo(os);
@@ -135,7 +148,7 @@ public class FileEndpoint {
     public Response delete(@PathParam("id") Long id) {
         try {
             boolean exists = usageRepository.usageExistsInFile(id);
-            if(exists){
+            if (exists) {
                 usageRepository.deleteUsageByFileId(id);
             }
             fileRepository.deleteById(id);
