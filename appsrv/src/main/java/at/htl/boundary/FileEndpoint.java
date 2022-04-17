@@ -114,7 +114,7 @@ public class FileEndpoint {
         String path = fileRepository.TARGET_UPLOAD_FOLDER + lastdir + course.level.description.toLowerCase() + "/" + course.title + "/";
         String absolutePath;
         if (quarkusEnv.equals("prod")) {
-            absolutePath = "/var/www/html/assets" + path;
+            absolutePath = "/var/www/html/assets/" + path;
         } else {
             absolutePath = Paths.get("").toAbsolutePath() + "/src/main/resources/META-INF/resources/" + path;
         }
