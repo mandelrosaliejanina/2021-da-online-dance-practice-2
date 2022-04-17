@@ -103,7 +103,8 @@ public class FileEndpoint {
         //String path = fileRepository.imageHome() + "/" + fileRepository.TARGET_UPLOAD_FOLDER;
         String lastdir = imagename.contains(".mp4") || imagename.contains(".mov") ? "video/" : "audio/";
         Course course = courseRepository.find("id", courseId).stream().findFirst().orElse(null);
-        String path =  fileRepository.TARGET_UPLOAD_FOLDER + lastdir + course.level.description.toLowerCase() + "/"+ course.title + "/";
+        String path =  "";
+        //fileRepository.TARGET_UPLOAD_FOLDER + lastdir + course.level.description.toLowerCase() + "/"+ course.title + "/";
 
         D_File fileEntry = fileRepository.createFile(imagename, path + imagename ,description);
         File dir = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path);
