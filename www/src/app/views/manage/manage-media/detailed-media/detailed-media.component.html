@@ -20,7 +20,7 @@
 
 
 <div id="formContainer">
-  <form (ngSubmit)="submit()" [formGroup]="uploadForm">
+  <form [formGroup]="uploadForm">
     <p id="textContainer">
       Wählen Sie eine Datei aus : <input id="buttonCreate" (change)="onFileSelect($event)" name="file" type="file"/>
     </p>
@@ -29,7 +29,7 @@
 </div>
 
 <div id="button-wrapper">
-  <button id="upload" mat-raised-button type="submit" color="primary">Hochladen</button>
+  <button id="upload" mat-raised-button type="submit" (click)="submit()" color="primary">Hochladen</button>
   <button mat-raised-button (click)="close()" color="warn">Abbrechen</button>
 </div>
 
