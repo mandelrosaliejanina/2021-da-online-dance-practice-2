@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 
 @RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
-@Consumes({"video/mp4", MediaType.APPLICATION_OCTET_STREAM})
+@Consumes({"video/mp4", MediaType.APPLICATION_OCTET_STREAM , "video/quicktime","audio/mpeg"})
 @Path("/file")
 
 public class FileEndpoint {
@@ -98,19 +98,23 @@ public class FileEndpoint {
                             @PathParam("imagename") String imagename,
                             @QueryParam("description") String description,
                             @QueryParam("courseId") long courseId) {
+
+        System.out.println(imagename);
         //String path = fileRepository.imageHome() + "/" + fileRepository.TARGET_UPLOAD_FOLDER;
         String lastdir = imagename.contains(".mp4") || imagename.contains(".mov") ? "video/" : "audio/";
-        String path = Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + fileRepository.TARGET_UPLOAD_FOLDER + lastdir;
+        Course course = courseRepository.find("id", courseId).stream().findFirst().orElse(null);
+        String path =  fileRepository.TARGET_UPLOAD_FOLDER + lastdir + course.level.description.toLowerCase() + "/"+ course.title + "/";
 
-        D_File fileEntry = fileRepository.createFile(imagename, fileRepository.TARGET_UPLOAD_FOLDER + lastdir + imagename ,description);
-        File file = new File(path, imagename);
+        D_File fileEntry = fileRepository.createFile(imagename, path + imagename ,description);
+        File dir = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path);
+        dir.mkdirs();
+        File file = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path, imagename);
         try (var os = new FileOutputStream(file)) {
             inputStream.transferTo(os);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        Course course = courseRepository.find("id", courseId).stream().findFirst().orElse(null);
         usageRepository.persist(new Usage(course, fileEntry));
         return Response.ok().entity(fileEntry).build();
     }

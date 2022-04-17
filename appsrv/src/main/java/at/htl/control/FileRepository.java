@@ -80,9 +80,9 @@ public class FileRepository implements PanacheRepository<D_File> {
        String[] filenameParts = filename.split("\\.");
         ContentType contentType = null;
 
-        if (filenameParts[1].equals("mp4") || filenameParts[1].equals("mov")) {
+        if (filenameParts[filenameParts.length - 1].equals("mp4") || filenameParts[filenameParts.length - 1].equals("mov")) {
             contentType = ContentType.VIDEO;
-        } else if (filenameParts[1].equals("mp3")) {
+        } else if (filenameParts[filenameParts.length - 1].equals("mp3")) {
             contentType = ContentType.AUDIO;
         }
         return getEntityManager().merge(
