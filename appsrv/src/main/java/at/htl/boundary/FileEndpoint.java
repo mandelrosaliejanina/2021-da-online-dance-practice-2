@@ -109,6 +109,7 @@ public class FileEndpoint {
         File dir = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path);
         dir.mkdirs();
         File file = new File(Paths.get("").toAbsolutePath() +  "/src/main/resources/META-INF/resources/" + path, imagename);
+        System.out.println(file.getAbsolutePath());
         try (var os = new FileOutputStream(file)) {
             inputStream.transferTo(os);
         } catch (IOException e) {
