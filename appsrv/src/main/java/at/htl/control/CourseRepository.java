@@ -16,7 +16,6 @@ public class CourseRepository implements PanacheRepository<Course> {
         return find("level", level).list();
     }
 
-
     public Course save(Course course) {
         return getEntityManager().merge(course);
     }

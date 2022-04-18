@@ -38,8 +38,6 @@ public class CourseEndpoint {
     @Inject
     AccessTokenRepository accessTokenRepository;
 
-    @Inject
-    BookingRepository bookingRepository;
 
     @Inject
     Logger logger;
@@ -84,9 +82,7 @@ public class CourseEndpoint {
             if (accessTokenRepository.accessTokenExistsInCourse(id)) {
                 accessTokenRepository.deleteAccessTokenByCourseId(id);
             }
-            if (bookingRepository.bookingExistsInCourse(id)) {
-                bookingRepository.deleteBookingByCourseId(id);
-            }
+
             courseRepository.deleteById(id);
             return Response
                     .noContent()

@@ -59,48 +59,6 @@ public class FileEndpoint {
         return Response.ok(fileRepository.listAll()).build();
     }
 
-    /**
-     * https://mkyong.com/webservices/jax-rs/file-upload-example-in-resteasy/
-     */
-/*    @POST
-    @Consumes(MediaType.MULTIPART_FORM_DATA)
-    @Path("/")
-    @RolesAllowed("TEACHER")
-    public Response uploadFile(MultipartFormDataInput input, @Context UriInfo uri) throws IOException {
-        String fileName;
-        D_File file = null;
-
-        Map<String, List<InputPart>> uploadForm = input.getFormDataMap();
-        List<InputPart> inputParts = uploadForm.get("file");
-
-        for (InputPart inputPart : inputParts) {
-            try {
-                MultivaluedMap<String, String> header = inputPart.getHeaders();
-                fileName = fileRepository.getFileName(header);
-
-                //convert the uploaded file to input stream
-                InputStream inputStream = inputPart.getBody(InputStream.class, null);
-
-                byte[] bytes = IOUtils.toByteArray(inputStream);
-
-                file = fileRepository.writeFile(bytes, fileName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        if (file != null) {
-            JsonObjectBuilder builder = Json.createObjectBuilder()
-                    .add("fileId", file.id);
-            return Response
-                    .ok(builder.build())
-                    .build();
-        } else {
-            return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("the file could not be persisted")
-                    .build();
-        }
-    }*/
     @POST
     @Path("/{imagename}")
     @Transactional
@@ -144,7 +102,7 @@ public class FileEndpoint {
     @DELETE
     @Path("/{id}")
     @Transactional
-    //@RolesAllowed("TEACHER")
+    @RolesAllowed("TEACHER")
     public Response delete(@PathParam("id") Long id) {
         try {
             boolean exists = usageRepository.usageExistsInFile(id);

@@ -22,8 +22,6 @@ public class InitBean {
     @Inject
     CourseRepository courseRepository;
 
-    @Inject
-    BookingRepository bookingRepository;
 
     @Inject
     FileRepository fileRepository;
@@ -95,15 +93,6 @@ public class InitBean {
         Course pirvatstunden3 = new Course("Individuell buchbar", "Termin vereinbaren!", topclass);
         courseRepository.persist(pirvatstunden3);
 
-        //Booking
-        Booking booking01 = new Booking(kelly, discofox);
-        bookingRepository.persist(booking01);
-        Booking booking02 = new Booking(rosalie, westcoastswing);
-        bookingRepository.persist(booking02);
-        Booking booking03 = new Booking(sandy, tanzclubs);
-        bookingRepository.persist(booking03);
-        Booking booking04 = new Booking(anton, pirvatstunden);
-        bookingRepository.persist(booking04);
 
         //File
         //audio

@@ -58,12 +58,6 @@ public class UserEndpoint {
         }
     }
 
-    /**
-     * @param jsonValue {
-     *                  username: "musterfrau",
-     *                  password: "123456789",
-     *                  }
-     */
     @POST
     @Path("/authenticate")
     public Response authenticate(JsonValue jsonValue) {
