@@ -72,129 +72,103 @@ public class InitBean {
         userRepository.persist(rosalie);
         User sandy = new User("SandyTang24", "Sandy", "Tang ", "sandypw", "TEACHER");
         userRepository.persist(sandy);
-        User anton = new User("Anton123", "Anton", "Traxler", "akdjb", "STUDENT");
-        userRepository.persist(anton);
-        User lisa = new User("Lisa124", "Lisa", "Müller ", "<jnov", "STUDENT");
-        userRepository.persist(lisa);
-        User jonas = new User("JonasT123", "Jonas", "Berg ", "orslgn", "STUDENT");
-        userRepository.persist(jonas);
+        User student = new User("StudentAccount", "student", "student", "passwordStudent", "STUDENT");
+        userRepository.persist(student);
+        User teacher = new User("TeacherAccount", "teacher", "teacher ", "passwordTeacher", "TEACHER");
+        userRepository.persist(teacher);
+        User victoriaStudent = new User("VictoriaStudentAccount", "Victoria", "Lauda ", "danceismypassion", "STUDENT");
+        userRepository.persist(victoriaStudent);
+        User victoriaTeacher = new User("VictoriaTeacherAccount", "Victoria", "Lauda ", "teachingdanceismypassion", "TEACHER");
+        userRepository.persist(victoriaTeacher);
 
-        //Course
-        Course discofox = new Course("Grundschritte & Figuren", "Für alle Gelengheiten", grundkurs);
-        courseRepository.persist(discofox);
-        Course westcoastswing = new Course("Der internationale Trend ", "Sehr cool!", bronze);
-        courseRepository.persist(westcoastswing);
-        Course tanzclubs = new Course("Plus Ballroom & Slowfox", "In Ried, Regau ubd Wels", silber);
-        courseRepository.persist(tanzclubs);
-        Course pirvatstunden = new Course("Individuell buchbar", "Termin vereinbaren!", gold);
-        courseRepository.persist(pirvatstunden);
-        Course pirvatstunden2 = new Course("Individuell buchbar", "Termin vereinbaren!", goldstar);
-        courseRepository.persist(pirvatstunden2);
-        Course pirvatstunden3 = new Course("Individuell buchbar", "Termin vereinbaren!", topclass);
-        courseRepository.persist(pirvatstunden3);
+        //Course Grundkurs Level
 
+        Course chachacha1 = new Course("Cha Cha Cha"," ",grundkurs);
+        courseRepository.persist(chachacha1);
+        Course jive1 = new Course("Jive"," ",grundkurs);
+        courseRepository.persist(jive1);
+        Course langsamerWalzer1 = new Course("Langsamer Walzer"," ",grundkurs);
+        courseRepository.persist(langsamerWalzer1);
+        Course pasoDoble1 = new Course("Paso Doble"," ",grundkurs);
+        courseRepository.persist(pasoDoble1);
+        Course quickStep1 = new Course("Quick Step"," ",grundkurs);
+        courseRepository.persist(quickStep1);
+        Course rumba1 = new Course("Rumba"," ",grundkurs);
+        courseRepository.persist(rumba1);
 
-        //File
-        //audio
-        D_File senorita = new D_File("CHA-Senorita", "mediafiles/audio/01_CHA-Senorita(original).mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(senorita);
-        D_File ice = new D_File("LikeIceinthesunshine", "mediafiles/audio/03_LikeIceinthesunshine.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(ice);
-        D_File coupe = new D_File("CoupedeVille", "mediafiles/audio/04_CoupedeVille.mp3", "Perfekt für lässige Tänze!", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(coupe);
-        D_File california = new D_File("HotelCalifornia-DJRoy", "mediafiles/audio/05_HotelCalifornia-DJRoy-(LatinGoodVibration2)-AO-WM,EN.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(california);
-        D_File wonder = new D_File("wonderwhy slow-waltz", "mediafiles/audio/06_lwonderwhy-03-slow-waltz.wav", "Perfekte Musik für Ihre Walzertänze!", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(wonder);
-        D_File promises = new D_File("Promises-TanzorchesterKlausHallen", "mediafiles/audio/07-Promises-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(promises);
-        D_File fading = new D_File("Fading-TanzorchesterKlausHallen", "mediafiles/audio/08-Fading-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(california);
-        D_File bachataDeja = new D_File("Bachata-Dejavu", "mediafiles/audio/09Bachata-Dejavu.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(bachataDeja);
-        D_File sal = new D_File("Feliceslos4", "mediafiles/audio/10_SAL-Feliceslos4(SalsaVersio.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(sal);
-        D_File havana = new D_File("Havana-DJBernat", "mediafiles/audio/11-31-Havana-DJBernat-(LatinMusic14)-Casaphon-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(havana);
-        D_File mama = new D_File("Mama-DJRicoLatino", "mediafiles/audio/12-51-Mama-DJRicoLatino-(LatinMusic14)-Casaphon-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(mama);
-        D_File sweet = new D_File("Sweet But Psycho", "mediafiles/audio/13SweetButPsycho-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(sweet);
-        D_File tango = new D_File("Tango Por Una Cabeza instrumental violin cover stringquartet", "mediafiles/audio/14_TangoPorUnaCabeza-instrumentalviolincover-stringquartet.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(tango);
-        D_File lieblingmensch = new D_File("Lieblingsmensch Lila", "mediafiles/audio/15-29-Lieblingsmensch-Lila-(BallroomNights8)-Casaphon-PP,DE.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(lieblingmensch);
-        D_File roses = new D_File("RosesFromTheSouth", "mediafiles/audio/16_WW-RosesFromTheSouth.mp3", "Klassisches Lied perfekt für Ihre Übungstunden!", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(roses);
-        D_File paso = new D_File("PASO-Manolita60", "mediafiles/audio/17-PASO-Manolita60.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(paso);
-        D_File aldo = new D_File("Aldo Capioccioni", "mediafiles/audio/18-AldoCapioccioni-05-MyWay-SW28.wav", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(aldo);
-        D_File tuesday = new D_File("Tuesday", "mediafiles/audio/19-Tuesday(feat.DanelleSandoval).mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(tuesday);
-        D_File dancelife = new D_File("I Still Haven't Found", "mediafiles/audio/20-IStillHaven'tFound(shortversion)-DancelifeStudioOrchestra-(Bring16smilestoyoufeet)-Dancelife-LP,SP.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(dancelife);
-        D_File bailando = new D_File("Bailando", "mediafiles/audio/21_SAL-Bailando(feat.DescemerBu.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(bailando);
-        D_File ready = new D_File("I'mReady", "mediafiles/audio/22_I'mReady.mp3", "Starten Sie mit Ihren Tanzeinheiten !", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(ready);
-        D_File df = new D_File("Warum hast du nicht nein gesagt", "mediafiles/audio/23_DF-Warumhastdunichtneinges.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(df);
-        D_File ex = new D_File("Ex'sAndOh's", "mediafiles/audio/\"24-50-Ex'sAndOh's-Swingpop!-(BallroomNights8)-Casaphon-SW,EN.mp3", "Perfekt für lässige Tänze!", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(ex);
-        D_File hold = new D_File("HoldMyGirl", "mediafiles/audio>/25-29-HoldMyGirl-TanzorchesterKlausHallen-(ChartbreakerVol.21)-ZL-PP,EN.mp3", "Nun können Sie direkt mit Ihren Tanzeinheiten starten!", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(hold);
-        D_File sed = new D_File("SeddeTi...DustinRichie...", "mediafiles/audio/26_SeddeTi...DustinRichie...(bachatanew2019)(audio).mp3", "Perfekt für lässige Tänze!", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(sed);
-        D_File bang = new D_File("BangBang", "mediafiles/audio/27-BangBang,Part2-Genio&Pierrots-(LatinMegaHits6)-CM-IT,PP.mp3", "description", ContentType.valueOf("AUDIO"));
-        fileRepository.persist(bang);
+        // Courses Broze Level
+        Course chachacha2 = new Course("Cha Cha Cha"," ",bronze);
+        courseRepository.persist(chachacha2);
+        Course jive2 = new Course("Jive"," ",bronze);
+        courseRepository.persist(jive2);
+        Course langsamerWalzer2 = new Course("Langsamer Walzer"," ",bronze);
+        courseRepository.persist(langsamerWalzer2);
+        Course pasoDoble2 = new Course("Paso Doble"," ",bronze);
+        courseRepository.persist(pasoDoble2);
+        Course quickStep2 = new Course("Quick Step"," ",bronze);
+        courseRepository.persist(quickStep2);
+        Course rumba2 = new Course("Rumba"," ",bronze);
+        courseRepository.persist(rumba2);
 
-        D_File bachata = new D_File("Bachata-OnlineTanzkurs", "mediafiles/video/Bachata-OnlineTanzkurs.mov", "Nun können Sie direkt mit Ihren Tanzeinheiten starten!", ContentType.valueOf("VIDEO"));
-        fileRepository.persist(bachata);
-
-        D_File hiphop = new D_File("HipHopBartSimpson !!", "mediafiles/video/SalsaChrisFigurdesMonats.mp4", "Der HipHopBartSimpson Streetdance gehört zum Tanzstil Hip-Hop.", ContentType.valueOf("VIDEO"));
-        fileRepository.persist(hiphop);
-
-        D_File wienerwalz = new D_File("WienerWalzer", "mediafiles/video/WienerWalzer.mp4", "Hier Lernen Sie die Grundlagen des Wiener Walzers!", ContentType.valueOf("VIDEO"));
-        fileRepository.persist(wienerwalz);
-        //Usage
-        // Usage usage01 = new Usage(discofox, salsa);
-        //usageRepository.persist(usage01);
-        Usage usage02 = new Usage(westcoastswing, sed);
-        usageRepository.persist(usage02);
-        Usage usage03 = new Usage(tanzclubs, mama);
-        usageRepository.persist(usage03);
-        Usage usage04 = new Usage(pirvatstunden, dancelife);
-        usageRepository.persist(usage04);
-/*        Usage usage06 = new Usage(discofox,hiphop);
-        usageRepository.persist(usage06);*/
-        Usage usage07 = new Usage(discofox, roses);
-        usageRepository.persist(usage07);
-        Usage usage08 = new Usage(discofox, wonder);
-        usageRepository.persist(usage08);
-        Usage usage09 = new Usage(discofox, hiphop);
-        usageRepository.persist(usage09);
-        Usage usage10 = new Usage(westcoastswing, bang);
-        usageRepository.persist(usage10);
-        Usage usage11 = new Usage(westcoastswing, hold);
-        usageRepository.persist(usage11);
-        Usage usage12 = new Usage(tanzclubs, dancelife);
-        usageRepository.persist(usage12);
-        Usage usage13 = new Usage(tanzclubs, roses);
-        usageRepository.persist(usage13);
-        Usage usage14 = new Usage(pirvatstunden, hold);
-        usageRepository.persist(usage14);
-        Usage usage15 = new Usage(pirvatstunden, tango);
-        usageRepository.persist(usage15);
-        Usage usage16 = new Usage(discofox, sed);
-        usageRepository.persist(usage16);
-        Usage usage17 = new Usage(discofox, ready);
-        usageRepository.persist(usage17);
-        Usage usage05 = new Usage(discofox, wienerwalz);
-        usageRepository.persist(usage05);
+        // Course Silver Level
+        Course chachacha3 = new Course("Cha Cha Cha"," ",silber);
+        courseRepository.persist(chachacha3);
+        Course jive3 = new Course("Jive"," ",silber);
+        courseRepository.persist(jive3);
+        Course langsamerWalzer3 = new Course("Langsamer Walzer"," ",silber);
+        courseRepository.persist(langsamerWalzer3);
+        Course pasoDoble3 = new Course("Paso Doble"," ",silber);
+        courseRepository.persist(pasoDoble3);
+        Course quickStep3 = new Course("Quick Step"," ",silber);
+        courseRepository.persist(quickStep3);
+        Course rumba3 = new Course("Rumba"," ",silber);
+        courseRepository.persist(rumba3);
 
 
-        AccessToken accessToken = new AccessToken(discofox);
+        // Course Gold Level
+        Course chachacha4 = new Course("Cha Cha Cha"," ",gold);
+        courseRepository.persist(chachacha4);
+        Course jive4 = new Course("Jive"," ",gold);
+        courseRepository.persist(jive4);
+        Course langsamerWalzer4 = new Course("Langsamer Walzer"," ",gold);
+        courseRepository.persist(langsamerWalzer4);
+        Course pasoDoble4 = new Course("Paso Doble"," ",gold);
+        courseRepository.persist(pasoDoble4);
+        Course quickStep4 = new Course("Quick Step"," ",gold);
+        courseRepository.persist(quickStep4);
+        Course rumba4 = new Course("Rumba"," ",gold);
+        courseRepository.persist(rumba4);
+
+        // Course Goldstar Level
+        Course chachacha5 = new Course("Cha Cha Cha"," ",goldstar);
+        courseRepository.persist(chachacha5);
+        Course jive5 = new Course("Jive"," ",goldstar);
+        courseRepository.persist(jive5);
+        Course langsamerWalzer5 = new Course("Langsamer Walzer"," ",goldstar);
+        courseRepository.persist(langsamerWalzer5);
+        Course pasoDoble5= new Course("Paso Doble"," ",goldstar);
+        courseRepository.persist(pasoDoble5);
+        Course quickStep5 = new Course("Quick Step"," ",goldstar);
+        courseRepository.persist(quickStep5);
+        Course rumba5 = new Course("Rumba"," ",goldstar);
+        courseRepository.persist(rumba5);
+
+        // Course Goldstar Level
+        Course chachacha6 = new Course("Cha Cha Cha"," ",topclass);
+        courseRepository.persist(chachacha6);
+        Course jive6 = new Course("Jive"," ",topclass);
+        courseRepository.persist(jive6);
+        Course langsamerWalzer6 = new Course("Langsamer Walzer"," ",topclass);
+        courseRepository.persist(langsamerWalzer6);
+        Course pasoDoble6= new Course("Paso Doble"," ",topclass);
+        courseRepository.persist(pasoDoble6);
+        Course quickStep6 = new Course("Quick Step"," ",topclass);
+        courseRepository.persist(quickStep6);
+        Course rumba6 = new Course("Rumba"," ",topclass);
+        courseRepository.persist(rumba6);
+
+
+        AccessToken accessToken = new AccessToken(chachacha1);
         accessTokenRepository.persist(accessToken);
     }
 }
