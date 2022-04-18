@@ -1,7 +1,7 @@
 <div *ngIf="usage" [formGroup]="uploadForm">
   <mat-form-field appearance="fill">
     <mat-select [(value)]="selectedCourse">
-      <mat-option *ngFor="let course of courses" [value]="course">{{ course.title }}</mat-option>
+      <mat-option *ngFor="let course of courses" [value]="course">{{ course.title }} ({{course.level.description}})</mat-option>
     </mat-select>
 
     <mat-hint>Zuweisung der Datei zum Kurs</mat-hint>
