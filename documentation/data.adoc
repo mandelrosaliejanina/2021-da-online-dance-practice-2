@@ -10,7 +10,7 @@
 == Content von Victoria Lauda zum Uploaden
 - https://cloud.voeslan.at/s/zS2nZNDjkYH9gsk
 
-== Github-Repositorys
+== Github-Repository
 - https://github.com/htl-leonding-project/2021-da-online-dance-practice-2
 
 == Projektorganisation
