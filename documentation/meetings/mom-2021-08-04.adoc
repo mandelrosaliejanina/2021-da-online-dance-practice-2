@@ -1,0 +1,58 @@
+= Besprechungsprotokoll 04.08.2021
+Rosalie Mandel
+1.0, 12.03.2020: Some notes
+ifndef::imagesdir[:imagesdir: images]
+:icons: font
+//:sectnums:    // Nummerierung der Überschriften / section numbering
+//:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// https://fontawesome.com/v4.7.0/icons/
+icon:file-text-o[link=https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/{docname}.adoc] ‏ ‏ ‎
+icon:github-square[link=https://github.com/htl-leonding-college/asciidoctor-docker-template] ‏ ‏ ‎
+icon:home[link=https://htl-leonding.github.io/]
+endif::backend-html5[]
+
+
+.Teilnehmer
+|===
+|anwesend |Verteiler
+
+|Nachname Vorname
+|
+|TK
+|
+|MR
+|
+|ST
+|
+
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Online (Discord)
+
+|von-bis
+|19:00 - 21:30
+|Dauer
+|2h 30min
+|===
+
+
+== Besprochene Themen
+* Wir haben uns verschiedene Komponenten-Tools angesehen(Angular Material, Angular Flex Layout,Prime NG)
+* Wir haben in Youtrack unser Projekt angelegt -> VCS Integration
+* Wir haben unser Cld besprochen
+
+== Nächste Schritte
+* Komponenten-Tool auswählen
+* Weitere Arbeitsschritte im YouTrack vereinbaren, Sprints für die zeitliche Festlegung erstellen und die Commits umbedigt mit den Kürzeln der Task versehen
+
+
+
+

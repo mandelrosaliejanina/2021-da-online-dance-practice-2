@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+        actor TanzlehrerIn
+        actor TanzschuelerIn
+
+        rectangle {
+        TanzlehrerIn -- (legt neuen Kurs an)
+        TanzlehrerIn -- (bearbeitet Kurs)
+        TanzlehrerIn -- (lädt Datei hoch)
+        TanzlehrerIn -- (löscht Datei)
+        TanzlehrerIn -- (erstellt Zugangscode)
+        TanzlehrerIn -- (bearbeitet Zugangscode)
+        TanzschuelerIn -- (wählt Level aus)
+        TanzschuelerIn -- (wählt Kurs aus)
+        TanzschuelerIn -- (schaut Tanzvideos)
+        TanzschuelerIn -- (hört Audios)
+        }
+
+
+@enduml

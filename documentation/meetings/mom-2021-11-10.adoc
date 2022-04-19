@@ -1,0 +1,61 @@
+= Besprechungsprotokoll
+Sandy tang
+1.0, 10.11.2021: Some notes
+ifndef::imagesdir[:imagesdir: images]
+:icons: font
+//:sectnums:    // Nummerierung der Überschriften / section numbering
+//:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// https://fontawesome.com/v4.7.0/icons/
+icon:file-text-o[link=https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/{docname}.adoc] ‏ ‏ ‎
+icon:github-square[link=https://github.com/htl-leonding-college/asciidoctor-docker-template] ‏ ‏ ‎
+icon:home[link=https://htl-leonding.github.io/]
+endif::backend-html5[]
+
+
+.Teilnehmer
+|===
+|anwesend |Verteiler
+
+|Nachname Vorname
+|
+|TK
+|
+|TS
+|
+|MR
+|
+|ST
+|
+
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Schule
+
+|von-bis
+|17:20 -
+|Dauer
+|1h
+|===
+
+
+== TO DO
+- Anzeigen von Videos: ausgegraut, die Schrift in weiß im Vordergrund
+- Bei File entity ein Attribut String description hinzufügen
+- Css cards fürs Menu verwenden, auf schönes Design achten
+- relevante Punkte in den Angular Notes
+* 6.2.4 (input output)
+* 10.5 aber mit einem Framework
+* 7.3.1
+
+== Referenzen
+https://htl-leonding-college.github.io/angular-lecture-notes/
+
+

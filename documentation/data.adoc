@@ -1,0 +1,54 @@
+= Online-Dance-Practice
+
+== Webanwendung benutzen
+-   Damit das Abspielen der Videos und Audios funktioniert, dürfen Sie sich nicht im HTL-Leonding Schulnetzwerk befinden.
+-   Link zur Anwendung: http://141.147.26.152/
+-   Account zur Anmeldung:
+* Benutzername: TeacherAccount
+* Passwort: passwordTeacher
+
+== Content von Victoria Lauda zum Uploaden
+- https://cloud.voeslan.at/s/zS2nZNDjkYH9gsk
+
+== Github-Repositorys
+- https://github.com/htl-leonding-project/2021-da-online-dance-practice-2
+
+== Projektorganisation
+- Youtrack: https://vm81.htl-leonding.ac.at/agiles/99-260/100-1207
+
+== Systemarchitektur
+image::images/2.jpeg[Systemarchitektur]
+
+== Use-Case Diagramm
+[plantuml]
+
+[plantuml,ucd]
+----
+@startuml
+left to right direction
+        actor TanzlehrerIn
+        actor TanzschuelerIn
+
+        rectangle {
+        TanzlehrerIn -- (legt neuen Kurs an)
+        TanzlehrerIn -- (bearbeitet Kurs)
+        TanzlehrerIn -- (lädt Datei hoch)
+        TanzlehrerIn -- (löscht Datei)
+        TanzlehrerIn -- (erstellt Zugangscode)
+        TanzlehrerIn -- (bearbeitet Zugangscode)
+        TanzschuelerIn -- (wählt Level aus)
+        TanzschuelerIn -- (wählt Kurs aus)
+        TanzschuelerIn -- (schaut Tanzvideos)
+        TanzschuelerIn -- (hört Audios)
+        }
+
+
+@enduml
+
+----
+
+== Klassendiagramm
+
+
+image::images/cld.png[Systemarchitektur]
+

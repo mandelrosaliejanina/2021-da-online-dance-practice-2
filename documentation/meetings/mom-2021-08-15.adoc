@@ -1,0 +1,98 @@
+= Besprechungsprotokoll 15.08.2021
+Kelly Tran
+1.0, 12.03.2020: Some notes
+ifndef::imagesdir[:imagesdir: images]
+:icons: font
+//:sectnums:    // Nummerierung der Überschriften / section numbering
+//:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// https://fontawesome.com/v4.7.0/icons/
+icon:file-text-o[link=https://raw.githubusercontent.com/htl-leonding-college/asciidoctor-docker-template/master/asciidocs/{docname}.adoc] ‏ ‏ ‎
+icon:github-square[link=https://github.com/htl-leonding-college/asciidoctor-docker-template] ‏ ‏ ‎
+icon:home[link=https://htl-leonding.github.io/]
+endif::backend-html5[]
+
+
+.Teilnehmer
+|===
+|anwesend |Verteiler
+
+|Nachname Vorname
+|
+|TK
+|
+|TS
+|
+|
+|ST
+|
+
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Online (Discord)
+
+|von-bis
+|8:30 - 11:25
+|Dauer
+|3h
+|===
+
+
+== Besprochene Themen
+* Wir haben besprochen, dass in frontend zentrale Variablem (zB defaultUrl für den Host)
+zu erstellen zB in einem Konfigurationsfile
+** Link: https://www.codemad.com/article /180121/Configuration-Settings-for-Angular-Applications
+* In kleinen Schritten ist zu programmieren, besonders ist die Schnittstelle zwischen Backend und
+Frontend zu testen. Erst wenn das Backend brauchbare Daten zur Verfügung stellt,ist das Frontend
+zu programmieren
+* Ein späterer Schritt für die Sicherheit wäre
+** Link: https://medium.com/swlh/angular-quarkus-keycloak-security-ac95d4547d1
+* In Quarkus Informationen zentral speichern
+** Link: https://quarkus.io/guides/config
+* Besprochen haben wir auch wo man die Mediendateien speichern kann
+** Variante 1
+*** Als BLOB in der Datenbank
+**** NT: Die db könnte sehr groß werden
+**** NT: Kein direkter Zugriff auf Files möglich
+**** VT: Die Sicherung der Files erfolgt mit der DB-Sicherung
+** Variante 2
+*** Als File am WebServer
+**** VT: Einfacher Zugriff aus Angular-Code
+**** NT: Die Sicherung der files muss separat erfolgen
+** Variante 3
+*** Als File im Backend (Quarkus-Server)
+**** Zugriff über REST-Service
+**** VT: Man kann direkt über eine URI daraud zugreifen
+** Variante 4
+*** Als File am Datenbank Server
+**** Zugriff über REST-Service
+* Speichermöglichkeiten für Mediendateien
+** Variante 1
+*** Speichern im datenbank-server
+** Variante 2
+*** Speichern im web server. asset-Ordner (in diesen Ordner upload und download)
+** Variante 3
+*** Speichern im quarkus-backend
+** Variante 4
+** Speichern im import-ornder
+* Up- und Download der Mediendateien
+** 1. Download der App
+** 2. Holen der URI der Video-Datei aus Datenbank
+** 3. Zugriff auf Mediendateien zum Abspielen mit URI
+
+
+
+== Nächste Schritte
+* Upload für Files auf den Quarkus-Server (ins mediafiles-Verzeichnis)
+* REST-Endpoint, der den URL zu den Mediafiles zur Verfügung stellt
+
+
+
+
